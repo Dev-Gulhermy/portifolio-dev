@@ -1,0 +1,558 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* --primaria: #4f46e5;
+    --secundaria: #7c3aed;
+    --escuro: #0f172a;
+    --maisEscuro: #0a0f1c;
+    --claro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, 0.1); */
+
+
+    --primaria: #e60000;
+    /* vermelho principal */
+    --secundaria: #b30000;
+    /* vermelho escuro */
+    --escuro: #0a0a0a;
+    /* preto quase puro */
+    --maisEscuro: #000000;
+    /* preto total */
+    --claro: #ffffff;
+    /* branco puro */
+    --vidro: rgba(255, 255, 255, 0.1);
+    /* transparência branca */
+}
+
+body {
+    background-color: var(--maisEscuro);
+    color: var(--claro);
+}
+
+.icons {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.icons ul {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+}
+
+.icons ul li a {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--primaria);
+    transition: all 0.3s ease;
+}
+
+.icons ul li a .icon {
+    color: var(--claro);
+    /* color: var(--secundaria); */
+    position: relative;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.icons ul li a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: red;
+    /* temporário para testar */
+    transition: top 0.4s ease;
+    z-index: 1;
+}
+
+.icons ul li a:hover::before {
+    top: 0;
+}
+
+.icons ul li a:hover .icon {
+    color: #fff;
+    transform: rotateY(360deg);
+}
+
+/* Cores diferentes para cada botão */
+.icons ul li:nth-child(1) a::before {
+    background: #3b5999;
+}
+
+.icons ul li:nth-child(2) a::before {
+    background: #55acee;
+}
+
+.icons ul li:nth-child(3) a::before {
+    background: #0077b5;
+}
+
+.icons ul li:nth-child(4) a::before {
+    background: #db4437;
+}
+
+.icons ul li:nth-child(5) a::before {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%,
+            #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+
+.navegacao {
+    position: fixed;
+    /* background: rgba(15, 23, 42, 0.8); */
+    /* background: rgba(42, 15, 15, 0.8); */
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    padding: 1.5rem;
+
+    background: rgba(42, 15, 15, 0.3);
+    /* mais translúcido */
+    backdrop-filter: blur(10px);
+    /* efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px);
+    /* compatibilidade Safari */
+
+    border-bottom: 0.5px solid var(--secundaria);
+    /* border-bottom: 0.5px solid rgba(255, 255, 255, 0.1); */
+    /* linha sutil */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    /* leve sombra para dar profundidade */
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+}
+
+.menu-link {
+
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.menu-link::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    transition: width 0.5s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+.cabeçalho {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-perfil {
+    width: 500px;
+    height: 500px;
+    /* box-shadow: 0 0 20px rgba(79, 70, 229, 0.3); */
+    /* box-shadow: 0 0 20px rgba(230, 0, 0, 0.3);  */
+    /* vermelho sutil */
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.564);
+    border-radius: 50%;
+    border: 4px solid var(--vidro);
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: var(--primaria);
+    font-weight: bold;
+    margin: 5px;
+}
+
+.cabeçalho-sub-titulo {
+    font-size: 1.5rem;
+    color: var(--claro);
+}
+
+.sobre {
+    padding: 6rem 2rem;
+}
+
+
+.sobre {
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.sobre-titulo {
+    font-size: 3rem;
+    color: var(--claro);
+    margin-bottom: 20px;
+}
+
+.sobre-caixa {
+    position: relative;
+    display: inline-block;
+    color: var(--claro);
+    padding: 2rem;
+    border-radius: 16px;
+    max-width: 800px;
+    overflow: hidden;
+    background: transparent;
+    border: 1px solid var(--primaria);
+    transition: box-shadow 0.4s ease, border 0.4s ease;
+    z-index: 1;
+}
+
+
+.sobre-caixa:hover {
+    box-shadow: 0 0 10px red, 0 0 20px rgba(255, 0, 0, 0.5);
+
+}
+
+
+.sobre-paragrafo {
+    line-height: 1.25rem;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+    color: var(--claro);
+    /* já define a cor inicial */
+    font-weight: 300;
+    /* define o peso inicial para que a transição funcione */
+    transform: scale(1);
+    /* define escala inicial */
+    transition: all 0.3s ease;
+}
+
+.sobre-caixa:hover .sobre-paragrafo {
+    transform: scale(1.03);
+    color: var(--claro);
+    font-weight: 400;
+}
+
+.projetos {
+    padding: 6rem 2rem;
+}
+
+.projetos-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projetos-card {
+    /* background: rgba(255, 255, 255, 0.05); */
+    /* background: rgba(255, 0, 0, 0.05); */
+    /* leve vermelho translúcido */
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    /* border: 1px solid var(--vidro); */
+    border: 1px solid var(--primaria);
+    overflow: hidden;
+    transition: all 0.8s ease;
+}
+
+.projetos-card:hover {
+    background: var(--primaria);
+    border: 1px solid var(--escuro);
+    /* box-shadow: 0 10px 20px rgba(794, 70, 229, 0.2); */
+    box-shadow: 0 10px 20px rgba(230, 0, 0, 0.3);
+    /* sombra vermelha sutil */
+    /* box-shadow: 0 10px 20px rgba(255, 0, 0, 0.15); */
+    /*Um pouco mais leve*/
+    /* box-shadow: 0 10px 20px rgba(139, 0, 0, 0.4); */
+    /* vermelho escuro / Um pouco mais dramático*/
+    transform: translateX(-10px) scale(1.03);
+}
+
+.paragrafo-projetos {
+    line-height: 1.25rem;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: var(--claro);
+    /* estado normal */
+    transition: all 0.3s ease;
+}
+
+.projetos-card:hover .paragrafo-projetos {
+    font-size: 1rem;
+    transform: scale(1.05);
+    color: var(--claro);
+    font-weight: 400;
+}
+
+.projetos-card:hover .info-projetos {
+    color: var(--claro);
+}
+
+
+/* .projetos-card:hover .paragrafo-projetos {
+    color: var(--escuro);
+    line-height: 1.25rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    /* ⬅️ Novo tamanho aqui */
+/* transition: font-size 0.3s ease; */
+/* ⬅️ Suaviza a transição */
+
+
+.projetos-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+
+.projetos-imagem {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.caixa-textos-projeto {
+    padding: 1.5rem;
+}
+
+
+.paragrafo-projetos {
+    line-height: 1.25rem;
+    margin-top: 15px;
+}
+
+.info-projetoss {
+    margin-bottom: 5px;
+}
+
+
+.contatos {
+    padding: 6rem 2rem;
+}
+
+.contatos-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+/* .formulario-contato {
+    /* position: relative; */
+/* necessário para posicionar o brilho internamente */
+/* overflow: hidden;
+    z-index: 0;
+    max-width: 600px;
+    height: 340px;
+    margin: 0 auto; */
+/* background: rgba(255, 255, 255, 0.05); */
+/* background: rgba(255, 0, 0, 0.05); */
+/* backdrop-filter: blur(5px);
+    padding: 2rem; */
+/* border: 1px solid var(--vidro); */
+/* border: 1px solid var(--primaria);
+    border-radius: 15px; */
+
+
+
+.formulario-contato {
+    position: relative;
+    /* necessário para posicionamento interno */
+    z-index: 0;
+    /* cria contexto para empilhamento */
+    background: transparent;
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border: 1px solid var(--primaria);
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* impede brilhos de ultrapassar a caixa */
+}
+
+/* Nova camada para isolar brilhos */
+.brilho-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    /* <= está um nível acima do fundo mas ainda abaixo dos campos */
+}
+
+/* brilho base dentro do fomulário */
+.brilho-seguidor {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    /* 👈 Importante: igual ao container */
+}
+
+/* Neon vibrante com 3D e profundidade */
+.brilho-seguidor.neon-vibrante {
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, transparent 70%);
+    filter: blur(12px);
+    animation: pulseNeon 2s infinite ease-in-out;
+    box-shadow:
+        0 0 10px rgba(255, 0, 0, 0.4),
+        0 0 20px rgba(255, 0, 0, 0.3),
+        0 0 30px rgba(255, 0, 0, 0.2),
+        inset 0 0 10px rgba(255, 0, 0, 0.1);
+}
+
+/* Segunda camada com efeito mais largo e suave */
+.brilho-seguidor.extra {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.3) 0%, transparent 80%);
+    filter: blur(25px);
+    animation-delay: 0.2s;
+}
+
+
+@keyframes pulsar {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.5;
+    }
+}
+
+.campo-form {
+    width: 100%;
+    padding: 1rem;
+    position: relative;
+    z-index: 2;
+    /* garante que fique acima do brilho */
+    /* background: rgba(255, 255, 255, 0.05); */
+    background: transparent;
+    border-radius: 8px;
+    color: var(--claro);
+    border: 1px solid var(--vidro);
+    outline: none;
+    resize: none;
+    transition: border-color 0.5s ease, box-shadow 0.3s ease;
+    /* adicionado */
+}
+
+
+
+.campo-form:focus {
+    border-color: var(--secundaria);
+    /* box-shadow: 0 0 10pc rgba(79, 70, 229, 0.3); */
+    /* box-shadow: 0 0 10px rgba(255, 0, 0, 0.4); */
+    /* sombra vermelha suave */
+    /* box-shadow: 0 0 6px rgba(255, 0, 0, 0.25); */
+    /*Mais discreto */
+    box-shadow: 0 0 10px rgba(179, 0, 0, 0.4);
+    /* usa var(--secundaria) em RGBA / vermelhor escuro */
+    /* box-shadow: 0 0 10px var(--primaria); */
+
+}
+
+.grupo-form {
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.botao-form {
+    color: var(--claro);
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transform: all 0.5s ease;
+    margin-top: 10px;
+}
+
+.campo-form,
+.botao-form {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #0a0a0a;
+    /* fundo opaco para ocultar brilho */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.botao-form:hover {
+    transform: translateY(-4px);
+    /* box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4); */
+    box-shadow: 0 5px 15px rgba(230, 0, 0, 0.4);
+}
+
+.particulas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    background: radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%), radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%), var(--maisEscuro);
+}
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}

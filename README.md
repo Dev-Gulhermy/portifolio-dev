@@ -7,4 +7,4 @@ Ademais, também é um projetoque com o intuito de apresentar e demonstrar as ha
 
 Além disso, futuramente estará tendo outras tecnologias incrementadaas comn novas funcionalidades, estilizações e interatividade. 
 
-<a href="https://dev-gulhermy.github.io/portifolio-dev/">Executar a página e visualziar o projeto</a>
+<a href="https://dev-gulhermy.github.io/portifolio-dev/">Clique aqui para executar a página e Visualizar o projeto Portifólio - Dev</a>

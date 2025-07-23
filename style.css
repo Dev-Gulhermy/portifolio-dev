@@ -9,6 +9,12 @@ html {
     scroll-behavior: smooth;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 :root {
     /* --primaria: #4f46e5;
     --secundaria: #7c3aed;
@@ -146,6 +152,8 @@ body {
     justify-content: center;
     list-style: none;
     gap: 3rem;
+    flex-wrap: wrap;
+    /* ✅ Correção: evita overflow */
 }
 
 .menu-link {
@@ -204,9 +212,6 @@ h1 {
     color: var(--claro);
 }
 
-.sobre {
-    padding: 6rem 2rem;
-}
 
 
 .sobre {
@@ -271,6 +276,8 @@ h1 {
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    min-width: 0;
+    /* ✅ Correção */
 }
 
 .projetos-card {
@@ -283,6 +290,8 @@ h1 {
     border: 1px solid var(--primaria);
     overflow: hidden;
     transition: all 0.8s ease;
+    min-width: 0;
+    /* ✅ Correção */
 }
 
 .projetos-card:hover {
@@ -313,6 +322,8 @@ h1 {
     color: var(--claro);
     font-weight: 400;
 }
+
+
 
 .projetos-card:hover .info-projetos {
     color: var(--claro);
@@ -411,6 +422,10 @@ h1 {
     pointer-events: none;
     z-index: 1;
     /* <= está um nível acima do fundo mas ainda abaixo dos campos */
+    overflow: hidden;
+    /* ✅ Correção */
+    max-width: 100%;
+    /* ✅ Correção */
 }
 
 /* brilho base dentro do fomulário */
@@ -425,6 +440,8 @@ h1 {
     transition: opacity 0.3s ease;
     z-index: 1;
     /* 👈 Importante: igual ao container */
+    max-width: 100vw;
+    /* ✅ Correção */
 }
 
 /* Neon vibrante com 3D e profundidade */
@@ -555,4 +572,170 @@ h1 {
     50% {
         transform: translateY(-20px);
     }
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .navegacao {
+        position: fixed;
+        top: 0;
+        padding: 0.6rem;
+    }
+
+    .menu {
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        gap: 1.8rem;
+        flex-wrap: wrap;
+        padding: 1px;
+    }
+
+    .menu-link {
+        text-align: center;
+        font-size: 0.6rem;
+        padding: 0.3rem 0;
+    }
+
+    .foto-perfil {
+        width: 250px;
+        height: 250px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+
+
+    .cabeçalho-sub-titulo {
+        font-size: 1rem;
+    }
+
+    .icon {
+        top: -7px;
+        font-size: 1rem;
+    }
+
+    .icons ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .icons ul li a {
+        width: 30px;
+        height: 30px;
+        line-height: 40px;
+        font-size: 18px;
+    }
+
+
+    .sobre {
+        padding: 1rem 1rem;
+        margin: 1.5rem;
+    }
+
+    .sobre-caixa {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .sobre-caixa:hover .sobre-paragrafo {
+        transform: scale(1.01);
+    }
+
+    .sobre-titulo {
+        font-size: 1.5rem;
+    }
+
+    .sobre-paragrafo {
+        line-height: 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    .projetos {
+        padding: 8rem 1rem;
+    }
+
+    .projetos-titulo {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .projetos-caixa {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.7rem;
+        max-width: auto;
+        /* ✅ Correção */
+        margin: 2rem;
+    }
+
+    .projetos-imagem {
+        height: 150px;
+        width: 100%;
+    }
+
+    .paragrafo-projetos {
+        line-height: 1.20rem;
+        margin-top: 15px;
+        font-size: 0.8rem;
+    }
+
+    .projetos-card:hover .paragrafo-projetos {
+        font-size: 0.8rem;
+    }
+
+
+    .caixa-textos-projeto {
+        padding: 1.2rem;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .contatos-titulos {
+        font-size: 1.5rem;
+    }
+
+
+
+    .formulario-contato {
+        padding: 1rem;
+    }
+
+    .campo-form,
+    .botao-form {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+
+    .projetos-card:hover {
+        transform: translateX(-1px) scale(1.03);
+        ;
+    }
+
+    /* .projetos-card:hover {
+        transform: none !important;
+        /* ✅ Correção */
 }

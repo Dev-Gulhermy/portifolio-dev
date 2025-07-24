@@ -266,9 +266,70 @@ h1 {
     font-weight: 400;
 }
 
+.sobre-caixa:hover .icons-fab {
+    transform: scale(1.03);
+    transition: all 0.3s ease;
+}
+
+.icons-fab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.9rem;
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+    transition: color 0.1s ease;
+}
+
+.sobre-caixa:hover .fa-js {
+    color: #f7df1e;
+}
+
+.sobre-caixa:hover .fa-html5 {
+    color: #e44d26;
+}
+
+.sobre-caixa:hover .fa-css3-alt {
+    color: #2965f1;
+}
+
+.sobre-caixa:hover .fa-github {
+    color: #171515;
+}
+
+.sobre-caixa:hover .fa-git-alt {
+    color: #f1502f;
+}
+
+/* .fa-js:hover {
+    color: #f7df1e;
+}
+
+.fa-html5:hover {
+    color: #e44d26;
+}
+
+.fa-css3-alt:hover {
+    color: #2965f1;
+}
+
+.fa-github:hover {
+    color: #171515;
+}
+
+.fa-git-alt:hover {
+    color: #f1502f;
+}
+
 .projetos {
     padding: 6rem 2rem;
-}
+} */
+
+/* .icons-fab i:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+} */
 
 .projetos-caixa {
     display: grid;
@@ -529,6 +590,7 @@ h1 {
     width: 100%;
     transform: all 0.5s ease;
     margin-top: 10px;
+    font-size: 1rem;
 }
 
 .campo-form,
@@ -549,6 +611,12 @@ h1 {
     transform: translateY(-4px);
     /* box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4); */
     box-shadow: 0 5px 15px rgba(230, 0, 0, 0.4);
+}
+
+.bi-whatsapp {
+    font-size: 1rem;
+    position: relative;
+    left: 5px
 }
 
 .particulas {
@@ -633,193 +701,5 @@ h1 {
         top: 10%;
         left: 10%;
         opacity: 1;
-    }
-}
-
-@media screen and (max-width: 768px) {
-
-
-
-    html,
-    body {
-        overflow-x: hidden;
-        width: 100%;
-    }
-
-    .navegacao {
-        position: fixed;
-        top: 0;
-        padding: 0.6rem;
-    }
-
-    .menu {
-        border-radius: 10px;
-        display: flex;
-        justify-content: center;
-        list-style: none;
-        gap: 1.8rem;
-        flex-wrap: wrap;
-        padding: 1px;
-    }
-
-    .menu-link {
-        text-align: center;
-        font-size: 0.6rem;
-        padding: 0.3rem 0;
-    }
-
-    .foto-perfil {
-        width: 300px;
-        height: 300px;
-    }
-
-    h1 {
-        font-size: 1.8rem;
-    }
-
-
-
-    .cabeçalho-sub-titulo {
-        font-size: 1rem;
-    }
-
-    .icon {
-        top: -7px;
-        font-size: 1rem;
-        /* align-items: center; */
-    }
-
-    .icons ul {
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
-
-    .icons ul li a {
-        width: 30px;
-        height: 30px;
-        line-height: 40px;
-        font-size: 18px;
-    }
-
-
-    .sobre {
-        padding: 1rem 1rem;
-        margin: 0.2rem;
-    }
-
-    .sobre-caixa {
-        padding: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .sobre-caixa:hover .sobre-paragrafo {
-        transform: scale(1.01);
-    }
-
-    .sobre-titulo {
-        font-size: 1.8rem;
-    }
-
-    .sobre-paragrafo {
-        line-height: 1.25rem;
-        font-size: 0.9rem;
-    }
-
-    .projetos {
-        padding: 8rem 1rem;
-    }
-
-    .projetos-titulo {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-    }
-
-    .projetos-caixa {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 0.7rem;
-        max-width: auto;
-        /* ✅ Correção */
-        margin: 0.2rem;
-    }
-
-    .projetos-imagem {
-        height: 150px;
-        width: 100%;
-    }
-
-    .paragrafo-projetos {
-        line-height: 1.20rem;
-        margin-top: 15px;
-        font-size: 0.8rem;
-    }
-
-    .projetos-card:hover .paragrafo-projetos {
-        font-size: 0.8rem;
-    }
-
-    .projetos-card:hover {
-        transform: translateX(-1px) scale(1.03);
-        ;
-    }
-
-    /* .projetos-card:hover {
-        transform: none !important;
-        /* ✅ Correção */
-
-
-    .caixa-textos-projeto {
-        padding: 1.2rem;
-    }
-
-    .contatos {
-        padding: 1rem;
-    }
-
-    .contatos-titulo {
-        font-size: 1.8rem;
-        margin-bottom: 50px;
-    }
-
-    .formulario-contato {
-        padding: 0.7rem;
-        margin: 0.1rem;
-        position: relative;
-        overflow: hidden;
-    }
-
-
-
-    .brilho-seguidor,
-    .brilho-seguidor.neon-vibrante,
-    .brilho-seguidor.extra {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        animation: moverBrilhoMobile 8s linear infinite, pulseNeon 2s ease-in-out infinite;
-        pointer-events: none;
-        opacity: 1;
-        background: radial-gradient(circle, var(--primaria), transparent 80%);
-        z-index: 0;
-        filter: blur(20px);
-    }
-
-    /* .campo-form,
-    .botao-form {
-        font-size: 0.9rem;
-        padding: 0.75rem;
-    } */
-
-    .campo-form,
-    .grupo-form {
-        margin-bottom: 0.5rem;
-    }
-
-    .botao-form {
-        padding: 20px 16px;
-        margin: 0.1rem;
     }
 }

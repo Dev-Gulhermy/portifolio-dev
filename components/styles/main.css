@@ -1,0 +1,127 @@
+.cabecalho {
+    height: calc(100vh - 60px);
+    /* se o header tem 60px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8rem;
+    overflow: hidden;
+}
+
+.foto-perfil {
+    width: 400px;
+    height: 400px;
+    /* box-shadow: 0 0 20px rgba(79, 70, 229, 0.3); */
+    /* box-shadow: 0 0 20px rgba(230, 0, 0, 0.3);  */
+    /* vermelho sutil */
+    box-shadow: 0 0 25px rgb(255, 0, 0);
+    /* box-shadow: 0 0 20px rgba(255, 0, 0, 0.564); */
+    border-radius: 50%;
+    border: 4px solid var(--vidro);
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primaria);
+    font-weight: bold;
+    margin: 0.2rem;
+}
+
+
+.digitando {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.cabecalho-sub-titulo {
+    margin: 0.5rem 0;
+    /* evite valores grandes */
+    font-size: 1.5rem;
+    color: var(--claro);
+}
+
+.icon {
+    bottom: 6px;
+}
+
+.icons {
+    position: relative;
+    margin-top: 1rem;
+}
+
+.icons ul {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+}
+
+.icons ul li a {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--primaria);
+    transition: all 0.3s ease;
+}
+
+.icons ul li a .icon {
+    color: var(--claro);
+    /* color: var(--secundaria); */
+    position: relative;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.icons ul li a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: red;
+    /* temporário para testar */
+    transition: top 0.4s ease;
+    z-index: 1;
+}
+
+.icons ul li a:hover::before {
+    top: 0;
+}
+
+.icons ul li a:hover .icon {
+    color: #fff;
+    transform: rotateY(360deg);
+}
+
+/* Cores diferentes para cada botão */
+.icons ul li:nth-child(1) a::before {
+    background: #3b5999;
+}
+
+.icons ul li:nth-child(2) a::before {
+    background: #55acee;
+}
+
+.icons ul li:nth-child(3) a::before {
+    background: #0077b5;
+}
+
+.icons ul li:nth-child(4) a::before {
+    background: #db4437;
+}
+
+.icons ul li:nth-child(5) a::before {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%,
+            #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}

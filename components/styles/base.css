@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* outline: 1px solid red; */
+    /*Isso mostra as bordas dos elementos para ver quem está vazando. */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    /* impede scroll lateral */
+    /* CSS **não reconhece** `none` como valor para `overflow`.
+    Valores válidos para `overflow`:
+   `visible`, `hidden`, `scroll`, `auto` */
+}
+
+body {
+    background-color: var(--maisEscuro);
+    color: var(--claro);
+    /* transition: background-color 0.4s, color 0.4s; */
+}

@@ -1,0 +1,77 @@
+.navegacao {
+    position: fixed;
+    /* background: rgba(15, 23, 42, 0.8); */
+    /* background: rgba(42, 15, 15, 0.8); */
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    padding: 1rem;
+
+    background: rgba(42, 15, 15, 0.3);
+    /* mais translúcido */
+    backdrop-filter: blur(10px);
+    /* efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px);
+    /* compatibilidade Safari */
+
+    border-bottom: 0.5px solid var(--secundaria);
+    /* border-bottom: 0.5px solid rgba(255, 255, 255, 0.1); */
+    /* linha sutil */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    /* leve sombra para dar profundidade */
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 4rem;
+    flex-wrap: wrap;
+    /* ✅ Correção: evita overflow */
+}
+
+.menu-link {
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding: 0.4rem 0;
+}
+
+.menu-link::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    transition: width 0.5s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+.menu-link:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.12);
+    outline-offset: 4px;
+}
+
+/* body.dark {
+    background-color: var(--claro);
+    color: var(--escuro);
+}
+
+#toggle-tema {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 8px 12px;
+    border: none;
+    background-color: var(--vidro);
+    color: var(--claro);
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 6px;
+} */

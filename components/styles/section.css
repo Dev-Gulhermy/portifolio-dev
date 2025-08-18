@@ -1,0 +1,379 @@
+.sobre {
+    padding: 6rem 2rem;
+    text-align: center;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+
+.sobre-titulo {
+    font-size: 3rem;
+    color: var(--claro);
+    margin-bottom: 50px;
+}
+
+.sobre-caixa {
+    position: relative;
+    display: inline-block;
+    color: var(--claro);
+    padding: 2rem;
+    border-radius: 16px;
+    max-width: 800px;
+    overflow: hidden;
+    background: transparent;
+    border: 1px solid var(--primaria);
+    transition: box-shadow 0.4s ease, border 0.4s ease;
+    z-index: 1;
+}
+
+
+.sobre-caixa:hover {
+    box-shadow: 0 0 10px red, 0 0 20px rgba(255, 0, 0, 0.5);
+
+}
+
+
+.sobre-paragrafo {
+    line-height: 1.25rem;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+    color: var(--claro);
+    /* já define a cor inicial */
+    font-weight: 300;
+    /* define o peso inicial para que a transição funcione */
+    transform: scale(1);
+    /* define escala inicial */
+    transition: all 0.3s ease;
+}
+
+.sobre-caixa:hover .sobre-paragrafo {
+    transform: scale(1.03);
+    color: var(--claro);
+    font-weight: 400;
+}
+
+.sobre-caixa:hover .icons-fab {
+    transform: scale(1.03);
+    transition: all 0.3s ease;
+}
+
+.icons-fab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.9rem;
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+
+}
+
+.sobre-caixa:hover .fa-js {
+    color: #f7df1e;
+    transition: color 0.5s ease-in-out;
+}
+
+.sobre-caixa:hover .fa-html5 {
+    color: #e44d26;
+    transition: color 0.5s ease-in-out;
+}
+
+.sobre-caixa:hover .fa-css3-alt {
+    color: #2965f1;
+    transition: color 0.5s ease-in-out;
+}
+
+.sobre-caixa:hover .fa-github {
+    color: #171515;
+    transition: color 0.5s ease-in-out;
+}
+
+.sobre-caixa:hover .fa-git-alt {
+    color: #f1502f;
+    transition: color 0.5s ease-in-out;
+}
+
+/* .fa-js:hover {
+    color: #f7df1e;
+}
+
+.fa-html5:hover {
+    color: #e44d26;
+}
+
+.fa-css3-alt:hover {
+    color: #2965f1;
+}
+
+.fa-github:hover {
+    color: #171515;
+}
+
+.fa-git-alt:hover {
+    color: #f1502f;
+}
+
+.projetos {
+    padding: 6rem 2rem;
+} */
+
+/* .icons-fab i:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+} */
+
+.projetos-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(390px, 2fr));
+    /* grid-template-columns: repeat(2, 1fr); */
+    /* sempre 2 colunas */
+    gap: 1.3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-width: 0;
+    /* ✅ Correção */
+}
+
+.projetos-card {
+    /* background: rgba(255, 255, 255, 0.05); */
+    /* background: rgba(255, 0, 0, 0.05); */
+    /* leve vermelho translúcido */
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    /* border: 1px solid var(--vidro); */
+    border: 1px solid var(--primaria);
+    overflow: hidden;
+    transition: all 0.8s ease;
+    min-width: 0;
+    /* ✅ Correção */
+}
+
+.projetos-card:hover {
+    background: var(--primaria);
+    border: 1px solid var(--escuro);
+    /* box-shadow: 0 10px 20px rgba(794, 70, 229, 0.2); */
+    box-shadow: 0 10px 20px rgba(230, 0, 0, 0.3);
+    /* sombra vermelha sutil */
+    /* box-shadow: 0 10px 20px rgba(255, 0, 0, 0.15); */
+    /*Um pouco mais leve*/
+    /* box-shadow: 0 10px 20px rgba(139, 0, 0, 0.4); */
+    /* vermelho escuro / Um pouco mais dramático*/
+    transform: translateX(-10px) scale(1.03);
+}
+
+.paragrafo-projetos {
+    line-height: 1.25rem;
+    padding: 0 1.2rem 1rem;
+    font-size: 1.05rem;
+    color: var(--claro);
+    /* estado normal */
+    transition: all 0.3s ease;
+}
+
+.projetos-card:hover .paragrafo-projetos .info-projetos {
+    font-size: 1rem;
+    transform: scale(1.05);
+    color: var(--claro);
+    font-weight: 400;
+}
+
+
+.projetos-card:hover .info-projetos {
+    color: var(--claro);
+}
+
+.projetos-card:hover .icons-fab-projetos {
+    transform: scale(1.05);
+}
+
+
+/* .projetos-card:hover .paragrafo-projetos {
+    color: var(--escuro);
+    line-height: 1.25rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    /* ⬅️ Novo tamanho aqui */
+/* transition: font-size 0.3s ease; */
+/* ⬅️ Suaviza a transição */
+
+
+.projetos-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+
+.projetos-imagem {
+    height: 330px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.caixa-textos-projeto {
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+
+.infor-projetos {
+    font-size: 1.3rem;
+}
+
+
+.icons-fab-projetos {
+    position: static;
+    /* remove posicionamento absoluto */
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.4rem;
+    align-items: center;
+
+}
+
+.projetos-card:hover .fa-js {
+    color: #f7df1e;
+    transition: color 0.7s ease-in-out;
+}
+
+.projetos-card:hover .fa-html5 {
+    color: #e44d26;
+    transition: color 0.7s ease-in-out;
+}
+
+.projetos-card:hover .fa-css3-alt {
+    color: #2965f1;
+    transition: color 0.7s ease-in-out;
+}
+
+
+.contatos {
+    padding: 6rem 2rem;
+}
+
+.contatos-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+/* .formulario-contato {
+    /* position: relative; */
+/* necessário para posicionar o brilho internamente */
+/* overflow: hidden;
+    z-index: 0;
+    max-width: 600px;
+    height: 340px;
+    margin: 0 auto; */
+/* background: rgba(255, 255, 255, 0.05); */
+/* background: rgba(255, 0, 0, 0.05); */
+/* backdrop-filter: blur(5px);
+    padding: 2rem; */
+/* border: 1px solid var(--vidro); */
+/* border: 1px solid var(--primaria);
+    border-radius: 15px; */
+
+
+
+.formulario-contato {
+    position: relative;
+    /* necessário para posicionamento interno */
+    z-index: 0;
+    /* cria contexto para empilhamento */
+    background: transparent;
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border: 1px solid var(--primaria);
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* impede brilhos de ultrapassar a caixa */
+}
+
+.campo-form:focus {
+    border-color: var(--secundaria);
+    /* box-shadow: 0 0 10pc rgba(79, 70, 229, 0.3); */
+    /* box-shadow: 0 0 10px rgba(255, 0, 0, 0.4); */
+    /* sombra vermelha suave */
+    /* box-shadow: 0 0 6px rgba(255, 0, 0, 0.25); */
+    /*Mais discreto */
+    box-shadow: 0 0 10px rgba(179, 0, 0, 0.4);
+    /* usa var(--secundaria) em RGBA / vermelhor escuro */
+    /* box-shadow: 0 0 10px var(--primaria); */
+
+}
+
+.grupo-form {
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.botao-form {
+    color: var(--claro);
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transform: all 0.5s ease;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.campo-form,
+.botao-form {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    z-index: 2;
+    /* garante que fique acima do brilho */
+    /* background: rgba(255, 255, 255, 0.05); */
+    /* background-color: transparent; */
+    background-color: #0a0a0a;
+    /* fundo opaco para ocultar brilho */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--claro);
+    position: relative;
+    outline: none;
+    resize: none;
+    transition: border-color 0.5s ease, box-shadow 0.3s ease;
+
+}
+
+.botao-form:hover {
+    transform: translateY(-4px);
+    /* box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4); */
+    box-shadow: 0 5px 15px rgba(230, 0, 0, 0.4);
+}
+
+.fa-whatsapp {
+    font-size: 1rem;
+    position: relative;
+    left: 5px;
+}
+
+.erro-form {
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    margin-top: -10px;
+    display: block;
+}
+
+.campo-invalido {
+    border-color: #ff4d4d !important;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.4);
+}

@@ -1,0 +1,32 @@
+:root {
+    /* === Paleta Principal === */
+    /* --primaria: #4f46e5;
+    --secundaria: #7c3aed;
+
+     /* === Cores de Fundo === */
+    /* --escuro: #0f172a;
+    --maisEscuro: #0a0f1c;
+    
+    /* === Transparências / Efeitos === */
+    /* --claro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, 0.1); */
+
+
+    /* === Paleta Principal === */
+    --primaria: #e60000;
+    /* vermelho principal */
+    --secundaria: #b30000;
+    /* vermelho escuro */
+
+    /* === Cores de Fundo === */
+    --escuro: #121212;
+    /* preto quase puro */
+    --maisEscuro: #000000;
+    /* preto total */
+    --claro: #ffffff;
+    /* branco puro */
+
+    /* === Transparências / Efeitos === */
+    --vidro: rgba(255, 255, 255, 0.1);
+    /* transparência branca */
+}

@@ -195,12 +195,6 @@
         filter: blur(20px);
     }
 
-    /* .campo-form,
-    .botao-form {
-        font-size: 0.9rem;
-        padding: 0.75rem;
-    } */
-
     .campo-form,
     .grupo-form {
         margin-bottom: 0.5rem;

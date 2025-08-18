@@ -98,36 +98,6 @@
     transition: color 0.5s ease-in-out;
 }
 
-/* .fa-js:hover {
-    color: #f7df1e;
-}
-
-.fa-html5:hover {
-    color: #e44d26;
-}
-
-.fa-css3-alt:hover {
-    color: #2965f1;
-}
-
-.fa-github:hover {
-    color: #171515;
-}
-
-.fa-git-alt:hover {
-    color: #f1502f;
-}
-
-.projetos {
-    padding: 6rem 2rem;
-} */
-
-/* .icons-fab i:hover {
-    transform: scale(1.2);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-} */
-
 .projetos-caixa {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(390px, 2fr));
@@ -141,12 +111,8 @@
 }
 
 .projetos-card {
-    /* background: rgba(255, 255, 255, 0.05); */
-    /* background: rgba(255, 0, 0, 0.05); */
-    /* leve vermelho translúcido */
     border-radius: 10px;
     backdrop-filter: blur(5px);
-    /* border: 1px solid var(--vidro); */
     border: 1px solid var(--primaria);
     overflow: hidden;
     transition: all 0.8s ease;
@@ -157,13 +123,8 @@
 .projetos-card:hover {
     background: var(--primaria);
     border: 1px solid var(--escuro);
-    /* box-shadow: 0 10px 20px rgba(794, 70, 229, 0.2); */
     box-shadow: 0 10px 20px rgba(230, 0, 0, 0.3);
     /* sombra vermelha sutil */
-    /* box-shadow: 0 10px 20px rgba(255, 0, 0, 0.15); */
-    /*Um pouco mais leve*/
-    /* box-shadow: 0 10px 20px rgba(139, 0, 0, 0.4); */
-    /* vermelho escuro / Um pouco mais dramático*/
     transform: translateX(-10px) scale(1.03);
 }
 
@@ -172,7 +133,6 @@
     padding: 0 1.2rem 1rem;
     font-size: 1.05rem;
     color: var(--claro);
-    /* estado normal */
     transition: all 0.3s ease;
 }
 
@@ -191,17 +151,6 @@
 .projetos-card:hover .icons-fab-projetos {
     transform: scale(1.05);
 }
-
-
-/* .projetos-card:hover .paragrafo-projetos {
-    color: var(--escuro);
-    line-height: 1.25rem;
-    font-weight: 500;
-    font-size: 1.2rem;
-    /* ⬅️ Novo tamanho aqui */
-/* transition: font-size 0.3s ease; */
-/* ⬅️ Suaviza a transição */
-
 
 .projetos-titulo {
     text-align: center;
@@ -266,23 +215,6 @@
     margin-bottom: 50px;
 }
 
-/* .formulario-contato {
-    /* position: relative; */
-/* necessário para posicionar o brilho internamente */
-/* overflow: hidden;
-    z-index: 0;
-    max-width: 600px;
-    height: 340px;
-    margin: 0 auto; */
-/* background: rgba(255, 255, 255, 0.05); */
-/* background: rgba(255, 0, 0, 0.05); */
-/* backdrop-filter: blur(5px);
-    padding: 2rem; */
-/* border: 1px solid var(--vidro); */
-/* border: 1px solid var(--primaria);
-    border-radius: 15px; */
-
-
 
 .formulario-contato {
     position: relative;
@@ -302,15 +234,7 @@
 
 .campo-form:focus {
     border-color: var(--secundaria);
-    /* box-shadow: 0 0 10pc rgba(79, 70, 229, 0.3); */
-    /* box-shadow: 0 0 10px rgba(255, 0, 0, 0.4); */
-    /* sombra vermelha suave */
-    /* box-shadow: 0 0 6px rgba(255, 0, 0, 0.25); */
-    /*Mais discreto */
     box-shadow: 0 0 10px rgba(179, 0, 0, 0.4);
-    /* usa var(--secundaria) em RGBA / vermelhor escuro */
-    /* box-shadow: 0 0 10px var(--primaria); */
-
 }
 
 .grupo-form {
@@ -340,10 +264,7 @@
     margin-bottom: 1rem;
     z-index: 2;
     /* garante que fique acima do brilho */
-    /* background: rgba(255, 255, 255, 0.05); */
-    /* background-color: transparent; */
     background-color: #0a0a0a;
-    /* fundo opaco para ocultar brilho */
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     color: var(--claro);
@@ -356,7 +277,6 @@
 
 .botao-form:hover {
     transform: translateY(-4px);
-    /* box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4); */
     box-shadow: 0 5px 15px rgba(230, 0, 0, 0.4);
 }
 

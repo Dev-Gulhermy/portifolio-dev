@@ -1,22 +1,16 @@
 .navegacao {
     position: fixed;
-    /* background: rgba(15, 23, 42, 0.8); */
-    /* background: rgba(42, 15, 15, 0.8); */
     width: 100%;
     z-index: 100;
     top: 0;
     padding: 1rem;
-
     background: rgba(42, 15, 15, 0.3);
     /* mais translúcido */
     backdrop-filter: blur(10px);
     /* efeito de desfoque */
     -webkit-backdrop-filter: blur(10px);
     /* compatibilidade Safari */
-
     border-bottom: 0.5px solid var(--secundaria);
-    /* border-bottom: 0.5px solid rgba(255, 255, 255, 0.1); */
-    /* linha sutil */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     /* leve sombra para dar profundidade */
 }

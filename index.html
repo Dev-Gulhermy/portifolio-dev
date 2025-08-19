@@ -41,19 +41,19 @@
         <div class="icons">
             <ul>
                 <li>
-                    <a href="#"><i class="fab fa-facebook-f icon"></i></a>
+                    <a href="#" aria-label="Meu perfil no Facebook"><i class="fab fa-facebook-f icon"></i></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fab fa-twitter icon"></i> </a>
+                    <a href="#" aria-label="Meu perfil no Twitter"><i class="fab fa-twitter icon"></i> </a>
                 </li>
                 <li>
-                    <a href="#"><i class="fab fa-linkedin-in icon"></i></a>
+                    <a href="#" aria-label="Meu perfil no Linkedin"><i class="fab fa-linkedin-in icon"></i></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fab fa-google-plus-g icon"></i></a>
+                    <a href="#" a aria-label="Meu E-mail de contato"><i class="fab fa-google-plus-g icon"></i></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fab fa-instagram icon"></i></a>
+                    <a href="#" aria-label="Meu perfil no Instagram"><i class="fab fa-instagram icon"></i></a>
                 </li>
             </ul>
         </div>
@@ -84,8 +84,8 @@
             <div class="projetos-card">
                 <picture>
                     <source media="(max-width: 768px)" srcset="./img/projeto-1-P.png">
-                    <img src="./img/projeto-1-M.png" alt="projeto 1 - Animação Interativa de Cartões"
-                        class="projetos-imagem">
+                    <img src="./img/projeto-1-M.png"
+                        alt="Interface com cartões interativos que expandem ao passar o mouse" class="projetos-imagem">
                 </picture>
                 <div class="caixa-textos-projeto">
                     <h3 class="infor-projetos">Animação Interativa de Cartões</h3>
@@ -105,7 +105,8 @@
             <div class="projetos-card">
                 <picture>
                     <source media="(max-width: 768px)" srcset="./img/projeto-2-P.png">
-                    <img src="./img/projeto-2-M.png" alt="projeto 2 - Formulário de Login e Cadastro"
+                    <img src="./img/projeto-2-M.png"
+                        alt="Interface onde é possivel, dentro de um formulário, inserir seu Login ou cadastrá-lo"
                         class="projetos-imagem">
                 </picture>
                 <div class="caixa-textos-projeto">
@@ -126,7 +127,8 @@
             <div class="projetos-card">
                 <picture>
                     <source media="(max-width: 768px)" srcset="./img/projeto-3-P.png">
-                    <img src="./img/projeto-3-M.png" alt="projeto 3 - Formulário de Login Responsivo e Animado"
+                    <img src="./img/projeto-3-M.png"
+                        alt="Interface com um fundo mais brilhante e estiloso (interativo e agrádavel) onde é possivel, dentro de um formulário, inserir seu login e recuperar senha"
                         class="projetos-imagem">
                 </picture>
                 <div class="caixa-textos-projeto">
@@ -147,7 +149,8 @@
             <div class="projetos-card">
                 <picture>
                     <source media="(max-width: 768px)" srcset="./img/projeto-4-P.png">
-                    <img src="./img/projeto-4-M.png" alt="projeto 4 - Site de Apresentação Tecnológica"
+                    <img src="./img/projeto-4-M.png"
+                        alt="Interface onde expiica sobre tecnologia com foco em impacto visual, interatividade, usabilidade com interativado e demmonstração de localização"
                         class="projetos-imagem">
                 </picture>
                 <div class="caixa-textos-projeto">
@@ -179,10 +182,12 @@
 
 
             <div class="grupo-form">
+                <label for="nome" class="sr-only">Nome</label>
                 <input type="text" placeholder="Nome" class="campo-form" id="nome" autocomplete="off">
                 <span class="erro-form" id="erro-nome"></span>
             </div>
             <div class="grupo-form">
+                <label for="mensagem" class="sr-only">Mensagem</label>
                 <textarea class="campo-form" placeholder="Digite sua mensagem..." rows="4" id="mensagem"></textarea>
                 <span class="erro-form" id="erro-mensagem"></span>
             </div>

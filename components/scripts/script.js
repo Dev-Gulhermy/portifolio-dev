@@ -129,23 +129,66 @@ if (titulo) typeWriter(titulo);
 //     document.body.classList.toggle('dark');
 //     localStorage.setItem('tema', document.body.classList.contains('dark') ? 'dark' : 'light');
 // });
-//window.onload = () => {
-//    const tema = localStorage.getItem('tema');
-//   if (tema === 'dark') document.body.classList.add('dark');
-//};
+// window.onload = () => {
+//     const tema = localStorage.getItem('tema');
+//     if (tema === 'dark') document.body.classList.add('dark');
+// };
 
-// Partículas de fundo
+// === Alternância de Tema Dark/Light ===
+const toggleTema = document.getElementById("toggle-tema");
+
+// Verifica se já existe preferência no localStorage
+if (localStorage.getItem("tema") === "light") {
+    document.body.classList.add("light");
+    toggleTema.textContent = "🌙 Dark";
+} else {
+    toggleTema.textContent = "☀️ Light";
+}
+
+// Ação do clique no botão 
+toggleTema.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+
+    // Atualiza preferência
+    if (document.body.classList.contains("light")) {
+        localStorage.setItem("tema", "light");
+        toggleTema.textContent = "🌙 Dark";
+
+        // Altera partículas para PRETO no modo light
+        pJSDom[0].pJS.particles.color.value = "#000000";
+        pJSDom[0].pJS.particles.line_linked.color = "#000000";
+        pJSDom[0].pJS.fn.particlesRefresh();
+
+    } else {
+        localStorage.setItem("tema", "dark");
+        toggleTema.textContent = "☀️ Light";
+
+        // Altera partículas para VERMELHO no modo dark
+        pJSDom[0].pJS.particles.color.value = "#ff0000";
+        pJSDom[0].pJS.particles.line_linked.color = "#ff0000";
+        pJSDom[0].pJS.fn.particlesRefresh();
+    }
+});
+
+// Define cor inicial das partículas conforme tema
+let corParticulas;
+if (localStorage.getItem("tema") === "light") {
+    corParticulas = "#000000"; // preto para light
+} else {
+    corParticulas = "#ff0000"; // vermelho para dark
+}
+
 particlesJS('particles-js', {
     "particles": {
         "number": { "value": 50 },
-        "color": { "value": "#ff0000" },
+        "color": { "value": corParticulas }, // usa a cor inicial
         "shape": { "type": "circle" },
         "opacity": { "value": 0.5 },
         "size": { "value": 3 },
         "line_linked": {
             "enable": true,
             "distance": 150,
-            "color": "#ff0000",
+            "color": corParticulas, // usa a cor inicial
             "opacity": 0.4,
             "width": 1
         },
@@ -163,5 +206,27 @@ particlesJS('particles-js', {
     },
     "retina_detect": true
 });
+
+// === MENU HAMBÚRGUER ===
+const menuToggle = document.getElementById("menu-toggle");
+const menu = document.querySelector(".menu");
+
+menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("ativo");
+    menuToggle.classList.toggle("ativo");
+});
+
+// Fecha o menu ao clicar em um link
+document.querySelectorAll(".menu-link").forEach(link => {
+    link.addEventListener("click", () => {
+        menu.classList.remove("ativo");
+        menuToggle.classList.remove("ativo");
+    });
+});
+
+
+
+
+
 
 

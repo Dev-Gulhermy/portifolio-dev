@@ -13,27 +13,27 @@
 
 .sobre-titulo {
     font-size: 3rem;
-    color: var(--claro);
+    color: var(--texto);
     margin-bottom: 50px;
 }
 
 .sobre-caixa {
     position: relative;
     display: inline-block;
-    color: var(--claro);
+    color: var(--texto);
     padding: 2rem;
     border-radius: 16px;
     max-width: 800px;
     overflow: hidden;
     background: transparent;
-    border: 1px solid var(--primaria);
+    border: 1px solid var(--cor-primaria);
     transition: box-shadow 0.4s ease, border 0.4s ease;
     z-index: 1;
 }
 
 
 .sobre-caixa:hover {
-    box-shadow: 0 0 10px red, 0 0 20px rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0 10px var(--cor-primaria), 0 0 20px var(--fundo-fosco);
 
 }
 
@@ -43,7 +43,7 @@
     font-size: 1rem;
     position: relative;
     z-index: 2;
-    color: var(--claro);
+    color: var(--texto);
     /* já define a cor inicial */
     font-weight: 300;
     /* define o peso inicial para que a transição funcione */
@@ -54,7 +54,7 @@
 
 .sobre-caixa:hover .sobre-paragrafo {
     transform: scale(1.03);
-    color: var(--claro);
+    color: var(--texto);
     font-weight: 400;
 }
 
@@ -111,42 +111,55 @@
 }
 
 .projetos-card {
+    position: relative;
     border-radius: 10px;
     backdrop-filter: blur(5px);
-    border: 1px solid var(--primaria);
+    border: 1px solid var(--cor-primaria);
     overflow: hidden;
     transition: all 0.8s ease;
     min-width: 0;
     /* ✅ Correção */
+    min-height: 420px;
+    /* altura base */
+    /* padding: 0.4rem; */
 }
 
 .projetos-card:hover {
-    background: var(--primaria);
-    border: 1px solid var(--escuro);
-    box-shadow: 0 10px 20px rgba(230, 0, 0, 0.3);
+    background: var(--cor-primaria);
+    border: 1px solid var(--background);
+    box-shadow: 0 10px 20px var(--cor-secundaria);
     /* sombra vermelha sutil */
     transform: translateX(-10px) scale(1.03);
+    min-height: 645px;
+    /* altura maior quando expandido */
 }
 
 .paragrafo-projetos {
     line-height: 1.25rem;
     padding: 0 1.2rem 1rem;
     font-size: 1.05rem;
-    color: var(--claro);
+    /* color: var(--texto); */
     transition: all 0.3s ease;
 }
 
 .projetos-card:hover .paragrafo-projetos .info-projetos {
     font-size: 1rem;
     transform: scale(1.05);
-    color: var(--claro);
+    /* color: var(--texto); */
     font-weight: 400;
 }
 
 
-.projetos-card:hover .info-projetos {
-    color: var(--claro);
+/* .projetos-card:hover .info-projetos {
+    color: var(--texto);
+} */
+
+.projetos-card:hover .paragrafo-projetos,
+.projetos-card:hover .infor-projetos {
+    color: var(--texto-contraste);
 }
+
+
 
 .projetos-card:hover .icons-fab-projetos {
     transform: scale(1.05);
@@ -163,6 +176,65 @@
     height: 330px;
     width: 100%;
     object-fit: cover;
+}
+
+/* ===== BOTÃO FUTURISTA ===== */
+.btn-projeto {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 90%;
+    display: block;
+    padding: 12px 24px;
+    margin: 10px auto 0 auto;
+    /* centraliza dentro do card */
+    color: var(--texto-contraste);
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    border: 2px solid var(--texto-contraste);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.5s ease;
+    text-align: center;
+}
+
+/* Botão aparece depois do texto sumir */
+.projetos-card:hover .btn-projeto {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    background: rgba(255, 0, 0, 0.05);
+    box-shadow: 0 0 15px var(--cor-primaria), 0 0 30px var(--cor-primaria) inset;
+    animation: pulse 2s infinite;
+}
+
+/* Efeito borda neon animada */
+.btn-projeto::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--cor-primaria), transparent, var(--cor-primaria), transparent, var(--cor-primaria));
+    background-size: 300%;
+    z-index: -1;
+    animation: borderFlow 3s linear infinite;
+}
+
+/* Texto digitando */
+.typing-text {
+    display: inline-block;
+    border-right: 2px solid var(--cor-primaria);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(20, end) infinite alternate,
+        blink 0.7s step-end infinite;
 }
 
 .caixa-textos-projeto {
@@ -224,7 +296,7 @@
     background: transparent;
     backdrop-filter: blur(5px);
     padding: 2rem;
-    border: 1px solid var(--primaria);
+    border: 1px solid var(--cor-primaria);
     border-radius: 15px;
     max-width: 600px;
     margin: 0 auto;
@@ -233,8 +305,8 @@
 }
 
 .campo-form:focus {
-    border-color: var(--secundaria);
-    box-shadow: 0 0 10px rgba(179, 0, 0, 0.4);
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 10px var(--cor-secundaria);
 }
 
 .grupo-form {
@@ -244,8 +316,8 @@
 }
 
 .botao-form {
-    color: var(--claro);
-    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    color: var(--texto-contraste);
+    background: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria));
     padding: 1rem 2rem;
     border: none;
     border-radius: 8px;
@@ -264,20 +336,22 @@
     margin-bottom: 1rem;
     z-index: 2;
     /* garante que fique acima do brilho */
-    background-color: #0a0a0a;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--background);
+    border: 1px solid var(--fundo-fosco);
     border-radius: 8px;
-    color: var(--claro);
     position: relative;
     outline: none;
     resize: none;
     transition: border-color 0.5s ease, box-shadow 0.3s ease;
+}
 
+.campo-form {
+    color: var(--texto);
 }
 
 .botao-form:hover {
     transform: translateY(-4px);
-    box-shadow: 0 5px 15px rgba(230, 0, 0, 0.4);
+    box-shadow: 0 5px 15px var(--cor-secundaria);
 }
 
 .fa-whatsapp {
@@ -298,13 +372,20 @@
 }
 
 .erro-form {
-    color: #ff4d4d;
+    color: var(--cor-erro);
     font-size: 0.9rem;
     margin-top: -10px;
     display: block;
 }
 
 .campo-invalido {
-    border-color: #ff4d4d !important;
-    box-shadow: 0 0 5px rgba(255, 0, 0, 0.4);
+    border-color: var(--cor-erro) !important;
+    box-shadow: 0 0 5px var(--cor-secundaria);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #111;
+    color: var(--texto-contraste);
 }

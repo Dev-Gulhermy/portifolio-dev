@@ -41,21 +41,28 @@
     <link rel="stylesheet" href="components/styles/responsivo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32-v1.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/favicons/favicon-48-v1.png">
+    <link rel="icon" type="image/x-icon" href="img/favicons/favicon.ico">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
     <!-- <title>Portifólio - Dev</title> -->
     <title>Adeildo Guilhermy | Desenvolvedor Fullstack</title>
 </head>
 
 <body>
-    <!-- <button id="toggle-tema">🌙 Alternar Tema</button> -->
+
     <div id="particles-js"></div>
     <header>
         <nav class="navegacao">
+            <div class="menu-toggle" id="menu-toggle">☰</div>
             <ul class="menu">
                 <li><a href="#inicio" class="menu-link">Início</a></li>
                 <li><a href="#sobre" class="menu-link">Sobre</a></li>
                 <li><a href="#projetos" class="menu-link">Projetos</a></li>
                 <li><a href="#contatos" class="menu-link">Contato</a></li>
             </ul>
+            <button id="toggle-tema">☀️ Light</button>
         </nav>
     </header>
     <main id="inicio" class="cabecalho">
@@ -111,7 +118,7 @@
         <div class="projetos-caixa">
             <div class="projetos-card">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="./img/projeto-1-P.png">
+                    <source media="(max-width: 500px)" srcset="./img/projeto-1-P-atualizada.png">
                     <img src="./img/projeto-1-M.png"
                         alt="Interface com cartões interativos que expandem ao passar o mouse" class="projetos-imagem">
                 </picture>
@@ -124,15 +131,18 @@
                     </div>
                 </div>
                 <p class="paragrafo-projetos">Este projeto apresenta um conjunto de cartões interativos desenvolvidos
-                    explorando técnicas de estilização e interatividade. Ao
-                    interagir, cada cartão expande suavemente, revelando conteúdo adicional de
-                    forma fluida e responsiva.
-                    O objetivo é demonstrar como efeitos visuais elegantes e interativos podem ser implementados de
-                    forma leve e otimizada, transmitindo dinamismo e modernidade em interfaces.</p>
+                    com foco em design moderno e atraente.
+                    Cada cartão utiliza técnicas de estilização que tornam a experiência visual envolvente e marcante.
+                    Ao interagir, o cartão se expande suavemente, revelando informações adicionais de forma elegante.
+                    A transição é fluida, garantindo uma navegação intuitiva e agradável para o usuário.
+                    O layout foi planejado para ser totalmente responsivo, adaptando-se a diferentes dispositivos.</p>
+                <a href="https://seu-projeto.com" target="_blank" class="btn-projeto">
+                    <span class="typing-text">&gt; Ver Projeto_</span>
+                </a>
             </div>
             <div class="projetos-card">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="./img/projeto-2-P.png">
+                    <source media="(max-width: 500px)" srcset="./img/projeto-2-P-atualizada.png">
                     <img src="./img/projeto-2-M.png"
                         alt="Interface onde é possivel, dentro de um formulário, inserir seu Login ou cadastrá-lo"
                         class="projetos-imagem">
@@ -151,10 +161,13 @@
                     é feita por meio de animações suaves e efeitos de gradiente que alternam a paleta de cores,
                     reforçando a identidade visual de cada etapa. Ademais, a funcionalidade central é controlada por
                     JavaScript, que altera classes CSS para modificar a posição, e estilo dos elementos.</p>
+                <a href="https://seu-projeto.com" target="_blank" class="btn-projeto">
+                    <span class="typing-text">&gt; Ver Projeto_</span>
+                </a>
             </div>
             <div class="projetos-card">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="./img/projeto-3-P.png">
+                    <source media="(max-width: 500px)" srcset="./img/projeto-3-P-atualizada.png">
                     <img src="./img/projeto-3-M.png"
                         alt="Interface com um fundo mais brilhante e estiloso (interativo e agrádavel) onde é possivel, dentro de um formulário, inserir seu login e recuperar senha"
                         class="projetos-imagem">
@@ -173,10 +186,13 @@
                     tamanhos de tela. O objetivo principal é fornecer uma solução visualmente agradável e intuitiva para
                     processos de login, valorizando a usabilidade e o design moderno
                 </p>
+                <a href="https://seu-projeto.com" target="_blank" class="btn-projeto">
+                    <span class="typing-text">&gt; Ver Projeto_</span>
+                </a>
             </div>
             <div class="projetos-card">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="./img/projeto-4-P.png">
+                    <source media="(max-width: 500px)" srcset="./img/projeto-4-P-atualizada.png">
                     <img src="./img/projeto-4-M.png"
                         alt="Interface onde expiica sobre tecnologia com foco em impacto visual, interatividade, usabilidade com interativado e demmonstração de localização"
                         class="projetos-imagem">
@@ -194,7 +210,10 @@
                     experiência imersiva, unindo design futurista, navegação clara e recursos multimídia, para
                     transmitir inovação e profissionalismo desde o primeiro contato do usuário. Além disso, proporcionar
                     uma experiência imersiva para o usuário, destacando informações sobre a
-                    empresa/produto, seu diferencial e localização de forma clara e interativa.</p>
+                    empresa/produto.</p>
+                <a href="https://seu-projeto.com" target="_blank" class="btn-projeto">
+                    <span class="typing-text">&gt; Ver Projeto_</span>
+                </a>
             </div>
         </div>
     </section>
@@ -222,6 +241,9 @@
             <button type="submit" class="botao-form">Enviar Whatsapp <i class="fab fa-whatsapp"></i></button>
         </form>
     </section>
+    <footer>
+        <p>© 2025 - Desenvolvido por Adeildo Guilhermy</p>
+    </footer>
     <script src="components/scripts/particles.min.js"></script>
     <script src="components/scripts/script.js"></script>
 </body>

@@ -69,21 +69,21 @@
 
 /* Neon vibrante com 3D e profundidade */
 .brilho-seguidor.neon-vibrante {
-    background: radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--cor-primaria) 0%, transparent 70%);
     filter: blur(12px);
     animation: pulseNeon 2s infinite ease-in-out;
     box-shadow:
-        0 0 10px rgba(255, 0, 0, 0.4),
-        0 0 20px rgba(255, 0, 0, 0.3),
-        0 0 30px rgba(255, 0, 0, 0.2),
-        inset 0 0 10px rgba(255, 0, 0, 0.1);
+        0 0 10px var(--efeito-seguidor-04),
+        0 0 20px var(--efeito-seguidor-03),
+        0 0 30px var(--efeito-seguidor-02),
+        inset 0 0 10px var(--efeito-seguidor-01);
 }
 
 /* Segunda camada com efeito mais largo e suave */
 .brilho-seguidor.extra {
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(255, 0, 0, 0.3) 0%, transparent 80%);
+    background: radial-gradient(circle, var(--efeito-seguidor-03) 0%, transparent 80%);
     filter: blur(25px);
     animation-delay: 0.2s;
 }
@@ -198,3 +198,45 @@ Usuários com "prefers-reduced-motion" podem ter problemas com partículas ou tr
   }
 }
 */
+
+/* Borda correndo */
+@keyframes borderFlow {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 300% 0;
+    }
+}
+
+/* Pulsar */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Efeito digitando */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Cursor piscando */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}

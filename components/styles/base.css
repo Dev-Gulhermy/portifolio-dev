@@ -23,7 +23,7 @@ body {
 }
 
 body {
-    background-color: var(--maisEscuro);
-    color: var(--claro);
+    background-color: var(--texto-invertido);
+    color: var(--texto);
     /* transition: background-color 0.4s, color 0.4s; */
 }

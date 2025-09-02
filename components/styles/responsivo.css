@@ -1,32 +1,133 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 499px) {
 
     html,
     body {
         width: 100%;
     }
 
-
     .navegacao {
-        position: fixed;
-        top: 0;
-        padding: 0.6rem;
+        padding: 0.5rem;
     }
 
     .menu {
-        border-radius: 10px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 70vw;
         display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        list-style: none;
-        gap: 2.5rem;
-        flex-wrap: wrap;
-        padding: 1px;
+        background: linear-gradient(135deg,
+                rgba(13, 13, 13, .92),
+                rgba(26, 26, 26, .92));
+        backdrop-filter: blur(10px);
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+        transform: translateX(100%);
+        transition: transform .4s ease-in-out 1s;
+        /* 1s ≈ 0.6s (maior delay dos links) + 0.38s (duração) */
+        will-change: transform;
+        z-index: 1000;
+        gap: 2rem;
+    }
+
+
+    .menu.ativo {
+        transform: translateX(0);
+        transition: transform .4s ease-in-out 0s;
+    }
+
+    /* estado base (fechado/exited) */
+    .menu a {
+        opacity: 0;
+        transform: translateX(40px) scale(.95);
+        transition: opacity .38s ease, transform .38s cubic-bezier(.22, .9, .35, 1);
+    }
+
+    /* estado aberto */
+    .menu.ativo a {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        will-change: transform, opacity;
+    }
+
+    /* DELAYS PARA SAÍDA (quando .menu.ativo é removido estes são usados) */
+    .menu li:nth-child(1) a {
+        transition-delay: 0.3s;
+    }
+
+    .menu li:nth-child(2) a {
+        transition-delay: 0.4s;
+    }
+
+    .menu li:nth-child(3) a {
+        transition-delay: 0.5s;
+    }
+
+    .menu li:nth-child(4) a {
+        transition-delay: 0.6s;
+    }
+
+    /* DELAYS PARA ENTRADA (quando .menu.ativo está presente estes sobrescrevem) */
+    .menu.ativo li:nth-child(1) a {
+        transition-delay: 0.3s;
+    }
+
+    .menu.ativo li:nth-child(2) a {
+        transition-delay: 0.4s;
+    }
+
+    .menu.ativo li:nth-child(3) a {
+        transition-delay: 0.5s;
+    }
+
+    .menu.ativo li:nth-child(4) a {
+        transition-delay: 0.6s;
+    }
+
+    #toggle-tema {
+        position: fixed;
+        top: 0.9rem;
+        right: 1.5rem;
+        padding: 0.5rem 1rem;
+        z-index: 1100;
     }
 
     .menu-link {
-        text-align: center;
-        font-size: 0.8rem;
-        padding: 0.3rem 0;
+        position: relative;
+        font-size: 1.5rem;
+        color: var(--texto-contraste);
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
     }
+
+    .menu-link::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--cor-primaria);
+        transition: width .3s ease, left .3s ease;
+    }
+
+    .menu-link:hover {
+        color: var(--cor-primaria);
+        transform: scale(1.1);
+        text-shadow: 0 0 12px var(--cor-secundaria);
+    }
+
+    .menu-link:hover::after {
+        width: 100%;
+        left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
 
     .foto-perfil {
         width: 300px;
@@ -57,6 +158,7 @@
         top: -7px;
         font-size: 1rem;
         /* align-items: center; */
+
     }
 
     .icons ul {
@@ -134,12 +236,12 @@
 
     .projetos-card:hover {
         transform: translateX(-1px) scale(1.03);
-        ;
+        min-height: 660px;
     }
 
-    /* .projetos-card:hover {
-        transform: none !important;
-        /* ✅ Correção */
+    .btn-projeto {
+        width: 15rem;
+    }
 
 
     .infor-projetos {
@@ -190,7 +292,7 @@
         animation: moverBrilhoMobile 8s linear infinite, pulseNeon 2s ease-in-out infinite;
         pointer-events: none;
         opacity: 1;
-        background: radial-gradient(circle, var(--primaria), transparent 80%);
+        background: radial-gradient(circle, var(--cor-primaria), transparent 80%);
         z-index: 0;
         filter: blur(20px);
     }
@@ -204,7 +306,32 @@
         padding: 20px 16px;
         margin: 0.1rem;
     }
+
+    /* Força todas as variações no tema light dentro do menu hamburguer */
+    body.light .menu .menu-link,
+    body.light .menu .menu-link:link,
+    body.light .menu .menu-link:visited,
+    body.light .menu .menu-link:focus,
+    body.light .menu .menu-link:active {
+        color: var(--texto-contraste) !important;
+        /* branco SEMPRE no fundo escuro */
+    }
+
+    body.light .menu .menu-link:hover {
+        color: var(--texto-contraste) !important;
+        text-shadow: 0 0 12px var(--texto-contraste);
+    }
+
+    body.light .menu-link::after {
+        background: linear-gradient(90deg, var(--texto-contraste), var(--texto-contraste));
+    }
+
 }
 
 
-/* @media screen and (min-width: 769px) and (max-width:) {} */
+@media screen and (min-width: 500px) {
+    .projetos {
+        padding: 2rem 2rem;
+        margin: 0 auto;
+    }
+}

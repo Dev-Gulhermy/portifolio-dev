@@ -1,8 +1,4 @@
-
-// Nome do cache (troque o número quando atualizar os arquivos)
-const CACHE_NAME = "portfolio-cache-v1";
-
-// Lista de arquivos para cachear (adicione novos se precisar)
+const CACHE_NAME = "portfolio-cache-v2";
 const urlsToCache = [
   "/",
   "/index.html",
@@ -18,40 +14,59 @@ const urlsToCache = [
   "/img/project-1-P-atualizada.png",
   "/img/project-2-P-atualizada.png",
   "/img/project-3-P-updated.png",
-  "/img/project-4-P-updated.png",
+  "/img/project-4-P-updated.png"
 ];
 
-// Instala e adiciona os arquivos ao cache
+// Instala o service worker e adiciona arquivos ao cache
 self.addEventListener("install", (event) => {
+  console.log("[ServiceWorker] Install");
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log("Service Worker: Cache instalado");
-      return cache.addAll(urlsToCache);
-    })
+    caches.open(CACHE_NAME)
+      .then((cache) => {
+        console.log("[ServiceWorker] Caching app shell");
+        return cache.addAll(urlsToCache);
+      })
+      .then(() => self.skipWaiting())
   );
 });
 
-// Ativa e remove caches antigos
+// Ativa o SW e limpa caches antigos
 self.addEventListener("activate", (event) => {
+  console.log("[ServiceWorker] Activate");
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
+    caches.keys().then((cacheNames) =>
+      Promise.all(
         cacheNames.map((name) => {
           if (name !== CACHE_NAME) {
-            console.log("Service Worker: Limpando cache antigo", name);
+            console.log("[ServiceWorker] Deleting old cache:", name);
             return caches.delete(name);
           }
         })
-      );
-    })
+      )
+    )
   );
+  return self.clients.claim();
 });
 
-// Intercepta requisições e serve do cache quando possível
+// Intercepta requisições
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
+      if (response) {
+        // Retorna do cache
+        return response;
+      }
+      // Se não estiver no cache, busca na rede
+      return fetch(event.request).then((networkResponse) => {
+        // Atualiza cache dinamicamente
+        return caches.open(CACHE_NAME).then((cache) => {
+          cache.put(event.request, networkResponse.clone());
+          return networkResponse;
+        });
+      });
+    }).catch(() => {
+      // Fallback caso não haja cache nem rede
+      return caches.match("/index.html");
     })
   );
 });

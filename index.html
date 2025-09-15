@@ -250,10 +250,12 @@
     <script src="components/scripts/script.js"></script>
     <!-- Registro do Service Worker -->
     <script>
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("/service-worker.js")
-                .then(() => console.log("Service Worker registrado!"))
-                .catch((err) => console.log("Erro ao registrar Service Worker:", err));
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => console.log('ServiceWorker registrado:', reg))
+                    .catch(err => console.log('Falha ao registrar ServiceWorker:', err));
+            });
         }
     </script>
 </body>

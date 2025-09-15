@@ -248,6 +248,14 @@
     </footer>
     <script src="components/scripts/particles.min.js"></script>
     <script src="components/scripts/script.js"></script>
+    <!-- Registro do Service Worker -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("/service-worker.js")
+                .then(() => console.log("Service Worker registrado!"))
+                .catch((err) => console.log("Erro ao registrar Service Worker:", err));
+        }
+    </script>
 </body>
 
 </html>

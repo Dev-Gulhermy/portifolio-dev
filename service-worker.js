@@ -2,19 +2,22 @@ const CACHE_NAME = "portfolio-cache-v2";
 const urlsToCache = [
   "/",
   "/index.html",
-  "/estilos/main.css",
-  "/estilos/responsivo.css",
-  "/estilos/efeitos.css",
-  "/estilos/cabecalho.css",
-  "/estilos/variaveis.css",
-  "/estilos/secoes.css",
-  "/scripts/script.js",
-  "/scripts/particles.min.js",
+  "/components/styles/main.css",
+  "/components/styles/responsivo.css",
+  "/components/styles/efeitos.css",
+  "/components/styles/variables.css",
+  "/components/styles/section.css",
+  "/components/scripts/script.js",
+  "/components/scripts/particles.min.js",
   "/img/foto-perfil.png",
   "/img/project-1-P-atualizada.png",
   "/img/project-2-P-atualizada.png",
-  "/img/project-3-P-updated.png",
-  "/img/project-4-P-updated.png"
+  "/img/project-3-P-atualizada.png",
+  "/img/project-4-P-atualizada.png",
+  "/img/project-1-M.png",
+  "/img/project-2-M.png",
+  "/img/project-3-M.png",
+  "/img/project-4-M.png"
 ];
 
 // Instala o service worker e adiciona arquivos ao cache
@@ -29,6 +32,15 @@ self.addEventListener("install", (event) => {
       .then(() => self.skipWaiting())
   );
 });
+/*
+event.waitUntil(
+  caches.open(CACHE_NAME).then((cache) => {
+    return Promise.allSettled(
+      urlsToCache.map((url) => cache.add(url))
+    );
+  })
+);
+*/
 
 // Ativa o SW e limpa caches antigos
 self.addEventListener("activate", (event) => {

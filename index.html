@@ -31,7 +31,11 @@
     <!-- <meta name="twitter:creator" content="@seuuser"> -->
     <link rel="canonical" href="https://dev-gulhermy.github.io/portifolio-dev/">
     <meta name="robots" content="index,follow">
-    <link rel="stylesheet" href="components/styles/style-min.css">
+    <link rel="preload" href="components/styles/style-min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="components/styles/style-min.css">
+    </noscript>
     <link rel="stylesheet" href="components/styles/efeitos.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="components/styles/variables.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="components/styles/responsivo.css" media="print" onload="this.media='all'">

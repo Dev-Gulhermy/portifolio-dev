@@ -31,12 +31,19 @@
     <!-- <meta name="twitter:creator" content="@seuuser"> -->
     <link rel="canonical" href="https://dev-gulhermy.github.io/portifolio-dev/">
     <meta name="robots" content="index,follow">
-    <link rel="stylesheet" href="components/styles/style-min.css">
-    <link rel="stylesheet" href="components/styles/efeitos.css">
+    <link rel="preload" href="components/styles/style-min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="components/styles/style-min.css">
+    </noscript>
+    <link rel="stylesheet" href="components/styles/efeitos.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="components/styles/variables.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="components/styles/responsivo.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="components/styles/responsivo.css" media="print" onload="this.media='all'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </noscript>
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32-v1.png">
     <link rel="icon" type="image/png" sizes="48x48" href="img/favicons/favicon-48-v1.png">

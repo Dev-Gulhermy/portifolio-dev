@@ -32,6 +32,11 @@ body {
     /* transition: background-color 0.4s, color 0.4s; */
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 
 /*---------------------------------------
             H  E  A  D  E  R
@@ -181,6 +186,10 @@ h1 {
 
 .icon {
     bottom: 6px;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
 }
 
 .icons {

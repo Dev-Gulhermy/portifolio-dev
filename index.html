@@ -39,8 +39,10 @@
     <link rel="stylesheet" href="components/styles/efeitos.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="components/styles/variables.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="components/styles/responsivo.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32-v1.png">
     <link rel="icon" type="image/png" sizes="48x48" href="img/favicons/favicon-48-v1.png">
@@ -246,8 +248,8 @@
     <footer>
         <p>© 2025 - Desenvolvido por Adeildo Guilhermy</p>
     </footer>
-    <script src="components/scripts/particles.min.js"></script>
-    <script src="components/scripts/script.js"></script>
+    <script src="components/scripts/particles.min.js" defer></script>
+    <script src="components/scripts/script.js" defer></script>
     <!-- Registro do Service Worker -->
     <script>
         if ('serviceWorker' in navigator) {

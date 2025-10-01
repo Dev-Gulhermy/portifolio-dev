@@ -31,33 +31,261 @@
     <!-- <meta name="twitter:creator" content="@seuuser"> -->
     <link rel="canonical" href="https://dev-gulhermy.github.io/portifolio-dev/">
     <meta name="robots" content="index,follow">
+
     <link rel="preload" href="components/styles/style-min.css" as="style"
         onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="components/styles/style-min.css">
     </noscript>
+
+    <!-- <link rel="stylesheet" href="css/all.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="css/all.min.css">
+    </noscript> -->
+
+    <!-- <link rel="stylesheet" href="css/all.min.css" media="print" onload="this.media='all'"> -->
+
+
+
     <link rel="stylesheet" href="components/styles/efeitos.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="components/styles/variables.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="components/styles/responsivo.css" media="print" onload="this.media='all'">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="./components/fontawesome/all.min.css">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32-v1.png">
     <link rel="icon" type="image/png" sizes="48x48" href="img/favicons/favicon-48-v1.png">
-    <link rel="icon" type="image/x-icon" href="img/favicons/favicon.ico">
-    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="img/favicons/favicon-v1.ico">
+    <link rel="shortcut icon" href=".img/favicons/favicon.ico" type="image/x-icon">
+    <!-- Preload da imagem principal (LCP) -->
+    <link rel="preload" as="image" href="./img/foto_perfil_400x400.webp" fetchpriority="high" type="image/webp">
     <!-- <title>Portifólio - Dev</title> -->
     <title>Adeildo Guilhermy | Desenvolvedor Fullstack</title>
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    }
+
+    html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%
+    }
+
+    body {
+        background-color: var(--texto-invertido);
+        color: var(--texto)
+    }
+
+    img {
+        max-width: 100%;
+        height: auto
+    }
+
+    .navegacao {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        padding: 1rem;
+        background: var(--fundo-fosco);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 0.5px solid var(--cor-secundaria);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, .2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center
+    }
+
+    .menu {
+        display: flex;
+        list-style: none;
+        gap: 3rem
+    }
+
+    .menu-link {
+        color: var(--texto);
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        padding: .4rem 0
+    }
+
+    .menu-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+        transition: width .5s ease
+    }
+
+    .menu-link:hover::after {
+        width: 100%
+    }
+
+    .menu-toggle {
+        display: none;
+        font-size: 2rem;
+        position: relative;
+        z-index: 1000;
+        cursor: pointer;
+    }
+
+    #toggle-tema {
+        padding: .5rem 1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background: var(--cor-primaria);
+        color: var(--texto-contraste);
+        font-weight: bold;
+        box-shadow: 0 2px 5px var(--texto-invertido);
+        transition: all .3s ease
+    }
+
+    #toggle-tema:hover {
+        opacity: .9;
+        transform: scale(1.05)
+    }
+
+    .cabecalho {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 5rem 0 2rem 0;
+    }
+
+    .foto-perfil {
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+        object-fit: cover;
+        box-shadow: 0 0 50px var(--cor-primaria);
+        border: 4px solid var(--vidro);
+        animation: flutuar 3s ease-in-out infinite
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        color: var(--cor-primaria);
+        font-weight: bold;
+        margin: .2rem
+    }
+
+    .cabecalho-sub-titulo {
+        font-size: 1.4rem;
+        color: var(--texto)
+    }
+
+    .icons {
+        margin-top: 1rem
+    }
+
+    .icons .icon {
+        font-size: 1.3rem;
+        top: 0.5rem;
+    }
+
+    .icons ul {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+        justify-content: center
+    }
+
+    .icons ul li a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--cor-primaria);
+        transition: .3s
+    }
+
+    .icons ul li a .icon {
+        color: var(--texto);
+        position: relative;
+        z-index: 2;
+        transition: .5s
+    }
+
+    .icons ul li a::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--cor-primaria);
+        transition: top .4s ease;
+        z-index: 1
+    }
+
+    .icons ul li a:hover::before {
+        top: 0
+    }
+
+    .icons ul li a:hover .icon {
+        transform: rotateY(360deg)
+    }
+
+    /* Cores sociais */
+    .icons ul li:nth-child(1) a::before {
+        background: #3b5999
+    }
+
+    .icons ul li:nth-child(2) a::before {
+        background: #55acee
+    }
+
+    .icons ul li:nth-child(3) a::before {
+        background: #0077b5
+    }
+
+    .icons ul li:nth-child(4) a::before {
+        background: #db4437
+    }
+
+    .icons ul li:nth-child(5) a::before {
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)
+    }
+
+    @keyframes flutuar {
+
+        0%,
+        100% {
+            transform: translateX(0)
+        }
+
+        50% {
+            transform: translateY(-20px)
+        }
+    }
+</style>
 
 <body>
 
     <div id="particles-js"></div>
     <header>
         <nav class="navegacao">
-            <div class="menu-toggle" id="menu-toggle">☰</div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="menu">
                 <li><a href="#inicio" class="menu-link">Início</a></li>
                 <li><a href="#sobre" class="menu-link">Sobre</a></li>
@@ -69,9 +297,8 @@
     </header>
     <main id="inicio" class="cabecalho">
         <picture>
-            <source media="(max-width: 768px)" srcset="./img/foto-perfil-redonda-400x400-M.webp">
-            <img src="./img/foto-perfil-redonda-400x400-M.webp" alt="Foto de Adeildo Guilhermy, desenvolvedor web"
-                class="foto-perfil" fetchpriority=high>
+            <img src="./img/foto_perfil_400x400.webp" alt="Foto de Adeildo Guilhermy, desenvolvedor web"
+                class="foto-perfil" width="450" height="450" fetchpriority="high" decoding="async" loading="eager">
         </picture>
         <h1 class="digitando">Adeildo Guilhermy</h1>
         <p class="cabecalho-sub-titulo">Desenvolvedor Fullstack</p>
@@ -120,9 +347,12 @@
         <div class="projetos-caixa">
             <div class="projetos-card">
                 <picture>
-                    <source media="(max-width: 500px)" srcset="./img/projeto-1-P-atualizada.webp">
+                    <source media="(max-width: 500px)" srcset="./img/projeto-1-P-atualizada.webp 400w">
                     <img src="./img/projeto-1-M.webp"
-                        alt="Interface com cartões interativos que expandem ao passar o mouse" class="projetos-imagem">
+                        alt="Interface com cartões interativos que expandem ao passar o mouse" class="projetos-imagem"
+                        width="800" height="450"
+                        srcset="./img/projeto-1-P-atualizada.webp 400w, ./img/projeto-1-M.webp 800w"
+                        sizes="(max-width: 600px) 400px, 800px" loading="lazy" decoding="async">
                 </picture>
                 <div class="caixa-textos-projeto">
                     <h3 class="infor-projetos">Animação Interativa de Cartões</h3>
@@ -144,10 +374,12 @@
             </div>
             <div class="projetos-card">
                 <picture>
-                    <source media="(max-width: 500px)" srcset="./img/projeto-2-P-atualizada.webp">
+                    <source media="(max-width: 500px)" srcset="./img/projeto-2-P-atualizada.webp 400w">
                     <img src="./img/projeto-2-M.webp"
                         alt="Interface onde é possivel, dentro de um formulário, inserir seu Login ou cadastrá-lo"
-                        class="projetos-imagem">
+                        class="projetos-imagem" width="800" height="450"
+                        srcset="./img/projeto-2-P-atualizada.webp 400w, ./img/projeto-2-P-atualizada.webp 800w"
+                        sizes="(max-width: 600px) 400px, 800px" loading="lazy" decoding="async">
                 </picture>
                 <div class="caixa-textos-projeto">
                     <h3 class="infor-projetos">Formulário de Login e Cadastro</h3>
@@ -170,10 +402,12 @@
             </div>
             <div class="projetos-card">
                 <picture>
-                    <source media="(max-width: 500px)" srcset="./img/projeto-3-P-atualizada.webp">
-                    <img src="./img/projeto-3-M.webp"
-                        alt="Interface com um fundo mais brilhante e estiloso (interativo e agrádavel) onde é possivel, dentro de um formulário, inserir seu login e recuperar senha"
-                        class="projetos-imagem">
+                    <source media="(max-width: 500px)" srcset="./img/projeto-3-M.webp">
+                    <img src="./img/projeto-3-P.webp 400w" alt=" Interface com um fundo mais brilhante e estiloso (interativo e agrádavel) onde é
+                        possivel, dentro de um formulário, inserir seu login e recuperar senha" class="projetos-imagem"
+                        width="800" height="450"
+                        srcset="./img/projeto-3-P-atualizada.webp 400w, ./img/projeto-3-P-atualizada.webp 800w"
+                        sizes="(max-width: 600px) 400px, 800px" loading="lazy" decoding="async">
                 </picture>
                 <div class="caixa-textos-projeto">
                     <h3 class="infor-projetos">Formulário Responsivo e Animado</h3>
@@ -196,10 +430,12 @@
             </div>
             <div class="projetos-card">
                 <picture>
-                    <source media="(max-width: 500px)" srcset="./img/projeto-4-P-atualizada.webp">
+                    <source media="(max-width: 500px)" srcset="./img/projeto-4-P-atualizada.webp 400w">
                     <img src="./img/projeto-4-M.webp"
                         alt="Interface onde expiica sobre tecnologia com foco em impacto visual, interatividade, usabilidade com interativado e demmonstração de localização"
-                        class="projetos-imagem">
+                        class="projetos-imagem" width="800" height="450"
+                        srcset="./img/projeto-4-P-atualizada.webp 400w, ./img/projeto-4-P-atualizada.webp 800w"
+                        sizes="(max-width: 600px) 400px, 800px" loading="lazy" decoding="async">
                 </picture>
                 <div class="caixa-textos-projeto">
                     <h3 class="infor-projetos">Site de Apresentação Tecnológica</h3>

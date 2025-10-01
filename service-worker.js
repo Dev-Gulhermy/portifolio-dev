@@ -5,7 +5,7 @@
 // --- CONFIGURAÇÃO ---
 const DEBUG = true;
 
-const APP_SHELL_CACHE = "portfolio-appshell-v2";
+const APP_SHELL_CACHE = "portfolio-appshell-v1";
 const DYNAMIC_CACHE = "portfolio-dynamic-v2";
 const MAX_DYNAMIC_ITEMS = 50; // limite de itens dinâmico
 const FALLBACK_IMAGE = "/img/offline.png"; // imagem placeholder

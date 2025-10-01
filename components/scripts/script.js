@@ -208,18 +208,28 @@ particlesJS('particles-js', {
 });
 
 // === MENU HAMBÚRGUER ===
+// Pega o botão hamburguer
 const menuToggle = document.getElementById("menu-toggle");
+
+// Pega o menu
 const menu = document.querySelector(".menu");
 
+// Ao clicar no botão hamburguer
 menuToggle.addEventListener("click", () => {
+    // alterna o estado do menu
     menu.classList.toggle("ativo");
+
+    // alterna o estado visual do botão
     menuToggle.classList.toggle("ativo");
 });
 
-// Fecha o menu ao clicar em um link
+// Fecha o menu ao clicar em qualquer link do menu
 document.querySelectorAll(".menu-link").forEach(link => {
     link.addEventListener("click", () => {
+        // remove o estado ativo do menu
         menu.classList.remove("ativo");
+
+        // também volta o botão ao estado original
         menuToggle.classList.remove("ativo");
     });
 });

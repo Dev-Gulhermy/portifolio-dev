@@ -32,7 +32,6 @@
         gap: 2rem;
     }
 
-
     .menu.ativo {
         transform: translateX(0);
         transition: transform .4s ease-in-out 0s;
@@ -88,8 +87,8 @@
 
     #toggle-tema {
         position: fixed;
-        top: 0.9rem;
-        right: 1.5rem;
+        top: 0.8rem;
+        right: 1rem;
         padding: 0.5rem 1rem;
         z-index: 1100;
     }
@@ -124,14 +123,43 @@
         left: 0;
     }
 
+    /* ===== BOTÃO HAMBÚRGUER ===== */
     .menu-toggle {
-        display: block;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 24px;
+        cursor: pointer;
+        z-index: 1101;
+        /* acima do menu */
     }
 
+    .menu-toggle span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background: var(--cor-primaria);
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    /* Animação para virar "X" */
+    .menu-toggle.ativo span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.ativo span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.ativo span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
 
     .foto-perfil {
-        width: 350px;
-        height: 350px;
+        width: 400px;
+        height: 400px;
     }
 
     h1 {
@@ -154,9 +182,8 @@
         font-size: 1rem;
     }
 
-    .icon {
+    .icons .icon {
         top: -5px;
-        font-size: 1rem;
         /* align-items: center; */
 
     }
@@ -334,4 +361,6 @@
         padding: 2rem 2rem;
         margin: 0 auto;
     }
+
+
 }

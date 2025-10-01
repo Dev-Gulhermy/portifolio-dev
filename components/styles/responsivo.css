@@ -5,9 +5,9 @@
         width: 100%;
     }
 
-    .navegacao {
+    /* .navegacao {
         padding: 0.5rem;
-    }
+    } */
 
     .menu {
         position: fixed;
@@ -163,7 +163,7 @@
     }
 
     h1 {
-        font-size: clamp(1.2rem, 4vw, 3rem);
+        font-size: clamp(2.8rem, 4vw, 3rem);
         /* mínimo, relativo e máximo */
         text-align: center;
         line-height: 1.2;
@@ -179,11 +179,12 @@
     }
 
     .cabecalho-sub-titulo {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     .icons .icon {
         top: -5px;
+        font-size: 1.5rem;
         /* align-items: center; */
 
     }
@@ -194,13 +195,11 @@
     }
 
     .icons ul li a {
-        width: 30px;
-        height: 30px;
+        width: 45px;
+        height: 45px;
         line-height: 40px;
-        font-size: 18px;
+        font-size: 3rem;
     }
-
-
 
     .sobre {
         padding: 1rem 1rem;

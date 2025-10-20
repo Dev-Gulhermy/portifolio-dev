@@ -5,7 +5,7 @@
 // --- CONFIGURAÇÃO ---
 const DEBUG = true;
 
-const APP_SHELL_CACHE = "portfolio-appshell-v1";
+const APP_SHELL_CACHE = "portfolio-appshell-v2";
 const DYNAMIC_CACHE = "portfolio-dynamic-v2";
 const MAX_DYNAMIC_ITEMS = 50; // limite de itens dinâmico
 const FALLBACK_IMAGE = "/img/offline.png"; // imagem placeholder
@@ -19,7 +19,7 @@ const urlsToCache = [
   "/components/styles/variables.css",
   "/components/scripts/script.js",
   "/components/scripts/particles.min.js",
-  "/img/foto-perfil.webp",
+  "/img/foto-perfil_400x400.webp",
   "/img/project-1-P-atualizada.webp",
   "/img/project-2-P-atualizada.webp",
   "/img/project-3-P-atualizada.webp",
@@ -28,6 +28,21 @@ const urlsToCache = [
   "/img/project-2-M.webp",
   "/img/project-3-M.webp",
   "/img/project-4-M.webp",
+  "/icons/css3.svg",
+  "/icons/facebok.svg",
+  "/icons/git.svg",
+  "/icons/github.svg",
+  "/icons/google-plus-g.svg",
+  "/icons/html5.svg",
+  "/icons/instagram.svg",
+  "/icons/js.svg",
+  "/icons/linkkedin-in.svg",
+  "/icons/twitter.svg",
+  "/icons/whatsapp.svg",
+  "/favicons/favicon-16x16.png",
+  "/favicons/favicon-32-v1.png",
+  "/favicons/favicon-48-v1.png",
+  "/favicons/favicon.ico",
   FALLBACK_IMAGE // placeholder sempre no app shell
 ];
 

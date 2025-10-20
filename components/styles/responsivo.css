@@ -1,3 +1,21 @@
+@media screen and (max-width: 768px) {
+    .sobre-caixa {
+        animation: neonPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes neonPulse {
+
+        0%,
+        100% {
+            box-shadow: 0 0 10px var(--cor-primaria);
+        }
+
+        50% {
+            box-shadow: 0 0 50px var(--cor-primaria), 0 0 40px var(--fundo-fosco);
+        }
+    }
+}
+
 @media screen and (max-width: 499px) {
 
     html,
@@ -5,9 +23,6 @@
         width: 100%;
     }
 
-    /* .navegacao {
-        padding: 0.5rem;
-    } */
 
     .menu {
         position: fixed;
@@ -26,7 +41,6 @@
         box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
         transform: translateX(100%);
         transition: transform .3s ease-in-out 1s;
-        /* 1s ≈ 0.6s (maior delay dos links) + 0.38s (duração) */
         will-change: transform;
         z-index: 1000;
         gap: 2rem;
@@ -37,21 +51,18 @@
         transition: transform .4s ease-in-out 0s;
     }
 
-    /* estado base (fechado/exited) */
     .menu a {
         opacity: 0;
         transform: translateX(40px) scale(.95);
         transition: opacity .38s ease, transform .38s cubic-bezier(.22, .9, .35, 1);
     }
 
-    /* estado aberto */
     .menu.ativo a {
         opacity: 1;
         transform: translateX(0) scale(1);
         will-change: transform, opacity;
     }
 
-    /* DELAYS PARA SAÍDA (quando .menu.ativo é removido estes são usados) */
     .menu li:nth-child(1) a {
         transition-delay: 0.3s;
     }
@@ -68,7 +79,6 @@
         transition-delay: 0.6s;
     }
 
-    /* DELAYS PARA ENTRADA (quando .menu.ativo está presente estes sobrescrevem) */
     .menu.ativo li:nth-child(1) a {
         transition-delay: 0.3s;
     }
@@ -123,7 +133,6 @@
         left: 0;
     }
 
-    /* ===== BOTÃO HAMBÚRGUER ===== */
     .menu-toggle {
         display: flex !important;
         flex-direction: column;
@@ -132,7 +141,6 @@
         height: 24px;
         cursor: pointer;
         z-index: 1101;
-        /* acima do menu */
     }
 
     .menu-toggle span {
@@ -144,7 +152,6 @@
         transition: all 0.3s ease;
     }
 
-    /* Animação para virar "X" */
     .menu-toggle.ativo span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -158,19 +165,20 @@
     }
 
     .foto-perfil {
-        width: 400px;
-        height: 400px;
+        width: 350px;
+        height: 350px;
     }
 
     h1 {
         font-size: clamp(2.8rem, 4vw, 3rem);
-        /* mínimo, relativo e máximo */
         text-align: center;
         line-height: 1.2;
         white-space: normal;
-        /* permite quebra de linha */
         word-break: break-word;
-        /* evita estouro */
+    }
+
+    h1.digitando {
+        min-width: 10ch;
     }
 
     .cabecalho {
@@ -199,24 +207,42 @@
         margin: 0.2rem;
     }
 
+    .sobre {
+        padding: 1.5rem 1rem;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
     .sobre-caixa {
-        padding: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .sobre-caixa:hover .sobre-paragrafo {
-        transform: scale(1.01);
-    }
-
-    .sobre-titulo {
-        font-size: 1.8rem;
-        margin-bottom: 50px;
-        /* margin-bottom: 20 - 25; */
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
     }
 
     .sobre-paragrafo {
-        line-height: 1.25rem;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+        line-height: 1.4rem;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .icons-svg {
+        font-size: 50px;
+    }
+
+    .projetos {
+        padding: 2rem 1rem;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+
+
+    .projetos-card {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     .projetos {
@@ -226,7 +252,6 @@
     .projetos-titulo {
         font-size: 1.8rem;
         margin-bottom: 50px;
-        /* margin-bottom: 20 - 25; */
     }
 
     .projetos-caixa {
@@ -235,7 +260,6 @@
         /* sempre 2 colunas */
         gap: 0.7rem;
         max-width: auto;
-        /* ✅ Correção */
         margin: 0.2rem;
     }
 
@@ -255,11 +279,11 @@
 
     .projetos-card:hover {
         transform: translateX(-1px) scale(1.03);
-        min-height: 570px;
+        min-height: 680px;
     }
 
     .btn-projeto {
-        width: 21rem;
+        width: 15rem;
     }
 
 
@@ -267,13 +291,12 @@
         font-size: 1rem;
     }
 
-    .icons-fab-projetos {
-        display: flex;
-        left: 65%;
-        top: 48.5%;
-        gap: 0.5rem;
-        font-size: 1.1rem;
+    .icons-svg-projetos svg {
+        width: 25px;
+        height: 25px;
+        gap: 0;
     }
+
 
     .caixa-textos-projeto {
         padding: 1.2rem;
@@ -333,7 +356,6 @@
     body.light .menu .menu-link:focus,
     body.light .menu .menu-link:active {
         color: var(--texto-contraste) !important;
-        /* branco SEMPRE no fundo escuro */
     }
 
     body.light .menu .menu-link:hover {
@@ -355,4 +377,134 @@
     }
 
 
+}
+
+@media screen and (min-width: 320px) and (max-width: 375px) {
+    .projetos-card:hover {
+        transform: translateX(-1px) scale(1.03);
+        min-height: 680px;
+    }
+
+    .btn-projeto {
+        width: 15rem;
+    }
+
+    .projetos-caixa .projetos-card:nth-child(2):hover {
+        min-height: 660px;
+    }
+
+}
+
+@media screen and (min-width: 375px) and (max-width: 425px) {
+    .projetos-card:hover {
+        transform: translateX(-1px) scale(1.03);
+        min-height: 630px;
+    }
+
+    .btn-projeto {
+        width: 18rem;
+    }
+
+    .projetos-caixa .projetos-card:nth-child(2):hover {
+        min-height: 625px;
+    }
+
+    .projetos-caixa .projetos-card:nth-child(4):hover {
+        min-height: 615px;
+    }
+}
+
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+    .projetos-card:hover {
+        transform: translateX(-1px) scale(1.03);
+        min-height: 570px;
+    }
+
+    .btn-projeto {
+        width: 21rem;
+    }
+
+    .projetos-caixa .projetos-card:nth-child(2):hover {
+        min-height: 570px;
+    }
+
+    .projetos-caixa .projetos-card:nth-child(3):hover {
+        min-height: 590px;
+    }
+
+    .projetos-caixa .projetos-card:nth-child(4):hover {
+        min-height: 575px;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .projetos-card:hover {
+        transform: translateX(-1px) scale(1.03);
+        min-height: 625px;
+    }
+
+    .btn-projeto {
+        width: 40rem;
+    }
+
+    .projetos-caixa .projetos-card:nth-child(2):hover {
+        min-height: 625px;
+    }
+
+    .projetos-caixa .projetos-card:nth-child(3):hover {
+        min-height: 625px;
+    }
+
+    .projetos-caixa .projetos-card:nth-child(4):hover {
+        min-height: 625px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+    .projetos-card:hover {
+        transform: translateX(-1px) scale(1.03);
+        min-height: 700px;
+    }
+
+    .btn-projeto {
+        width: 26rem;
+    }
+
+    .projetos-caixa .projetos-card:nth-child(2):hover {
+        min-height: 720px;
+    }
+
+    .projetos-caixa .projetos-card:nth-child(3):hover {
+        min-height: 700px;
+    }
+
+    .projetos-caixa .projetos-card:nth-child(4):hover {
+        min-height: 700px;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .projetos-card:hover {
+        transform: translateX(-1px) scale(1.03);
+        min-height: 650px;
+    }
+
+    .btn-projeto {
+        width: 33rem;
+    }
+
+    .projetos-caixa .projetos-card:nth-child(2):hover {
+        min-height: 650px;
+    }
+
+    .projetos-caixa .projetos-card:nth-child(3):hover {
+        min-height: 650px;
+    }
+
+    .projetos-caixa .projetos-card:nth-child(4):hover {
+        min-height: 650px;
+    }
 }

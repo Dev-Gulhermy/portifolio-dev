@@ -1,31 +1,30 @@
-//Entrar em contato no whatsapp
+
 function enviarWhats(event) {
-    event.preventDefault(); // Impede o envio padrão do formulário
+    event.preventDefault();
 
     const nomeInput = document.getElementById('nome');
     const mensagemInput = document.getElementById('mensagem');
     const erroNome = document.getElementById('erro-nome');
     const erroMensagem = document.getElementById('erro-mensagem');
 
-    const nome = nomeInput.value.trim(); // (value) usado para acessar ou alterar o valor inserido pelo usuário ou o valor padrão do elemento. // (trim) remove espaços extras no início/fim.
-    const mensagem = mensagemInput.value.trim();// (value) usado para acessar ou alterar o valor inserido pelo usuário ou o valor padrão do elemento. // (trim) remove espaços extras no início/fim.
+    const nome = nomeInput.value.trim();
+    const mensagem = mensagemInput.value.trim();
     let valido = true;
 
-    // Limpa mensagens e estilos anteriores
+
     erroNome.textContent = '';
     erroMensagem.textContent = '';
     nomeInput.classList.remove('campo-invalido');
     mensagemInput.classList.remove('campo-invalido');
 
 
-    // Validação do nome
     if (nome.length <= 2) {
         erroNome.textContent = 'O nome deve ter mais de 2 letras.';
         nomeInput.classList.add('campo-invalido');
         valido = false;
     }
 
-    // Validação da mensagem
+
     if (mensagem.length <= 10) {
         erroMensagem.textContent = 'A mensagem deve ter mais de 10 letras.';
         mensagemInput.classList.add('campo-invalido');
@@ -34,7 +33,6 @@ function enviarWhats(event) {
 
     if (!valido) return;
 
-    // Enviar para WhatsApp
     const telefone = '5583988311137';
     const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
     const msgFormatada = encodeURIComponent(texto);
@@ -42,10 +40,10 @@ function enviarWhats(event) {
 
     /*console.log(url); usado para mostrar um valor na tela/console/propmt. Geralmente usado para identificar erros pois mostrar diretamente no console/prompt*/
 
-    window.open(url, '_blanck'); //só será executado se ambos os campos forem válidos.
+    window.open(url, '_blanck');
 }
 
-// Validação ao digitar em tempo real
+
 document.getElementById('nome').addEventListener('input', function () {
     const erroNome = document.getElementById('erro-nome');
     if (this.value.trim().length >= 3) {
@@ -91,13 +89,12 @@ if (window.innerWidth > 768) {
         });
     });
 } else {
-    // Dispositivos móveis: centraliza e deixa visível
     brilhos.forEach((brilho) => {
         brilho.style.opacity = 1;
     });
 }
 
-// Scroll Reveal
+
 const elementos = document.querySelectorAll('.reveal');
 
 function mostrarElemento() {
@@ -110,9 +107,9 @@ function mostrarElemento() {
     });
 }
 window.addEventListener('scroll', mostrarElemento);
-mostrarElemento(); // acionar no início também
+mostrarElemento();
 
-// Efeito de digitação
+
 function typeWriter(elemento) {
     const textoArray = elemento.innerHTML.split('');
     elemento.innerHTML = '';
@@ -123,21 +120,10 @@ function typeWriter(elemento) {
 const titulo = document.querySelector('.digitando');
 if (titulo) typeWriter(titulo);
 
-// Modo Escuro
-// const botao = document.querySelector('#toggle-tema');
-// botao.addEventListener('click', () => {
-//     document.body.classList.toggle('dark');
-//     localStorage.setItem('tema', document.body.classList.contains('dark') ? 'dark' : 'light');
-// });
-// window.onload = () => {
-//     const tema = localStorage.getItem('tema');
-//     if (tema === 'dark') document.body.classList.add('dark');
-// };
 
-// === Alternância de Tema Dark/Light ===
 const toggleTema = document.getElementById("toggle-tema");
 
-// Verifica se já existe preferência no localStorage
+
 if (localStorage.getItem("tema") === "light") {
     document.body.classList.add("light");
     toggleTema.textContent = "🌙 Dark";
@@ -145,16 +131,12 @@ if (localStorage.getItem("tema") === "light") {
     toggleTema.textContent = "☀️ Light";
 }
 
-// Ação do clique no botão 
 toggleTema.addEventListener("click", () => {
     document.body.classList.toggle("light");
 
-    // Atualiza preferência
     if (document.body.classList.contains("light")) {
         localStorage.setItem("tema", "light");
         toggleTema.textContent = "🌙 Dark";
-
-        // Altera partículas para PRETO no modo light
         pJSDom[0].pJS.particles.color.value = "#000000";
         pJSDom[0].pJS.particles.line_linked.color = "#000000";
         pJSDom[0].pJS.fn.particlesRefresh();
@@ -162,33 +144,32 @@ toggleTema.addEventListener("click", () => {
     } else {
         localStorage.setItem("tema", "dark");
         toggleTema.textContent = "☀️ Light";
-
-        // Altera partículas para VERMELHO no modo dark
         pJSDom[0].pJS.particles.color.value = "#ff0000";
         pJSDom[0].pJS.particles.line_linked.color = "#ff0000";
         pJSDom[0].pJS.fn.particlesRefresh();
     }
 });
 
-// Define cor inicial das partículas conforme tema
+
+
 let corParticulas;
 if (localStorage.getItem("tema") === "light") {
-    corParticulas = "#000000"; // preto para light
+    corParticulas = "#000000";
 } else {
-    corParticulas = "#ff0000"; // vermelho para dark
+    corParticulas = "#ff0000";
 }
 
 particlesJS('particles-js', {
     "particles": {
         "number": { "value": 50 },
-        "color": { "value": corParticulas }, // usa a cor inicial
+        "color": { "value": corParticulas },
         "shape": { "type": "circle" },
         "opacity": { "value": 0.5 },
         "size": { "value": 3 },
         "line_linked": {
             "enable": true,
             "distance": 150,
-            "color": corParticulas, // usa a cor inicial
+            "color": corParticulas,
             "opacity": 0.4,
             "width": 1
         },
@@ -207,36 +188,52 @@ particlesJS('particles-js', {
     "retina_detect": true
 });
 
-// === MENU HAMBÚRGUER ===
-// Pega o botão hamburguer
+
+
 const menuToggle = document.getElementById("menu-toggle");
-
-// Pega o menu
 const menu = document.querySelector(".menu");
-
-// Ao clicar no botão hamburguer
 menuToggle.addEventListener("click", () => {
-    // alterna o estado do menu
     menu.classList.toggle("ativo");
-
-    // alterna o estado visual do botão
     menuToggle.classList.toggle("ativo");
 });
 
-// Fecha o menu ao clicar em qualquer link do menu
+
 document.querySelectorAll(".menu-link").forEach(link => {
     link.addEventListener("click", () => {
-        // remove o estado ativo do menu
         menu.classList.remove("ativo");
-
-        // também volta o botão ao estado original
         menuToggle.classList.remove("ativo");
     });
 });
 
 
+// window.addEventListener('load', () => {
+//     const foto = document.getElementById('fotoPerfil');
+//     foto.style.animationPlayState = 'running';
+//     foto.classList.add('flutuar');
+// });
+// window.addEventListener('load', () => {
+//     document.getElementById('fotoPerfil').classList.add('flutuar');
+// });
+
+// window.addEventListener('load', () => {
+//     document.querySelector('.foto-perfil').style.animationPlayState = 'running';
+// });
+
+function startVisuals() {
+    const img = document.getElementById('fotoPerfil');
+    if (img) img.classList.add('animar');
+
+    // também inicializa partículas se preferir aqui
+    // initParticles();
+}
+
+if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => setTimeout(startVisuals, 120), { timeout: 2000 });
+} else {
+    window.addEventListener('load', () => setTimeout(startVisuals, 120));
+}
 
 
-
-
-
+const foto = document.getElementById('fotoPerfil');
+foto.style.willChange = 'transform';
+setTimeout(() => { foto.style.willChange = ''; }, 5000); // remove após início

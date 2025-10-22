@@ -1,3 +1,62 @@
+/* ================= Tema Dark (padrão) ================= */
+:root {
+    --cor-primaria: #e60000;
+    /* vermelho principal */
+    --cor-secundaria: #b30000;
+    /* vermelho escuro */
+
+    --background: #0d0d0d;
+    /* fundo preto */
+    --texto: #ffffff;
+    /* texto branco */
+    --texto-invertido: #000000;
+    /* usado em botões claros */
+
+
+
+    --fundo-fosco: rgba(42, 15, 15, 0.3);
+    --cor-erro: #ff4d4d;
+    --texto-contraste: #ffffff;
+    /* usado só em hovers/áreas escuras */
+
+    /*-- EFEITOS SEGUIDOR--*/
+    --efeito-seguidor-neon: rgba(255, 0, 0, 0.8);
+    --efeito-seguidor-01: rgba(255, 0, 0, 0.1);
+    --efeito-seguidor-02: rgba(255, 0, 0, 0.2);
+    --efetio-seguidor-03: rgba(255, 0, 0, 0.3);
+    --efeito-seguidor-04: rgba(255, 0, 0, 0.4);
+
+
+}
+
+/* ================= Tema Light ================= */
+body.light {
+    --cor-primaria: #000000;
+    /* mantém vermelho */
+    --cor-secundaria: #292525;
+
+    --background: #ffffff;
+    /* fundo branco */
+    --texto: #000000;
+    /* texto preto */
+    --texto-invertido: #ffffff;
+    /* usado em botões escuros */
+
+
+    --fundo-fosco: rgba(71, 59, 59, 0.3);
+    --cor-erro: #5c4040;
+    --texto-contraste: #ffffff;
+    /* texto branco para hover em fundo preto */
+
+    /*-- EFEITOS --*/
+    --efeito-seguidor-neon: rgba(0, 0, 0, 0.8);
+    --efeito-seguidor-01: rgba(0, 0, 0, 0.1);
+    --efeito-seguidor-02: rgba(0, 0, 0, 0.2);
+    --efetio-seguidor-03: rgba(0, 0, 0, 0.3);
+    --efeito-seguidor-04: rgba(0, 0, 0, 0.4);
+}
+
+
 .sobre {
     padding: 6rem 2rem;
     text-align: center;

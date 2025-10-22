@@ -166,16 +166,6 @@ Usuários com "prefers-reduced-motion" podem ter problemas com partículas ou tr
     }
 }
 
-/*Em vez de remover todas as animações do site, você pode escolher somente as mais fortes:
-@media (prefers-reduced-motion: reduce) {
-  .particles,
-  .parallax,
-  .scroll-anim {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-*/
 @keyframes borderFlow {
     0% {
         background-position: 0 0;

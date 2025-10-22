@@ -165,8 +165,8 @@
     }
 
     .foto-perfil {
-        width: 350px;
-        height: 350px;
+        width: 25rem;
+        height: 25rem;
     }
 
     h1 {
@@ -198,7 +198,7 @@
     .icons ul li a {
         width: 45px;
         height: 45px;
-        line-height: 40px;
+        line-height: 55px;
         font-size: 1px;
     }
 
@@ -398,19 +398,23 @@
 @media screen and (min-width: 375px) and (max-width: 425px) {
     .projetos-card:hover {
         transform: translateX(-1px) scale(1.03);
-        min-height: 630px;
+        min-height: 570px;
     }
 
     .btn-projeto {
-        width: 18rem;
+        width: 21rem;
     }
 
-    .projetos-caixa .projetos-card:nth-child(2):hover {
+    /* .projetos-caixa .projetos-card:nth-child(2):hover {
         min-height: 625px;
+    } */
+
+    .projetos-caixa .projetos-card:nth-child(3):hover {
+        min-height: 580px;
     }
 
     .projetos-caixa .projetos-card:nth-child(4):hover {
-        min-height: 615px;
+        min-height: 580px;
     }
 }
 

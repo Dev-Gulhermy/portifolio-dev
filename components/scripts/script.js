@@ -206,25 +206,10 @@ document.querySelectorAll(".menu-link").forEach(link => {
 });
 
 
-// window.addEventListener('load', () => {
-//     const foto = document.getElementById('fotoPerfil');
-//     foto.style.animationPlayState = 'running';
-//     foto.classList.add('flutuar');
-// });
-// window.addEventListener('load', () => {
-//     document.getElementById('fotoPerfil').classList.add('flutuar');
-// });
-
-// window.addEventListener('load', () => {
-//     document.querySelector('.foto-perfil').style.animationPlayState = 'running';
-// });
-
 function startVisuals() {
     const img = document.getElementById('fotoPerfil');
     if (img) img.classList.add('animar');
 
-    // também inicializa partículas se preferir aqui
-    // initParticles();
 }
 
 if ('requestIdleCallback' in window) {

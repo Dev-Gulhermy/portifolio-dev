@@ -94,7 +94,7 @@
     font-weight: 400;
 }
 
-/* Container dos ícones */
+
 .icons-svg {
     display: flex;
     justify-content: center;
@@ -106,12 +106,12 @@
     position: relative;
 }
 
-/* Leve zoom no grupo todo */
+
 .sobre-caixa:hover .icons-svg {
     transform: scale(1.10);
 }
 
-/* Ícones individuais */
+
 .icons-svg .svg {
     transition:
         transform 0.4s ease,
@@ -138,14 +138,14 @@
     left: 100%;
 }
 
-/* Ao passar o mouse sobre o container */
+
 .sobre-caixa:hover .icons-svg .svg {
     transform: translateY(-6px) scale(1.10);
     text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
     animation: pulseGlow 1.8s ease-in-out infinite alternate;
 }
 
-/* Delay sequencial — movimento em onda */
+
 .sobre-caixa:hover .icons-svg .svg:nth-child(1) {
     transition-delay: 0.05s;
     animation-delay: 0.05s;
@@ -171,7 +171,7 @@
     animation-delay: 0.25s;
 }
 
-/* Cores personalizadas */
+
 .sobre-caixa:hover .fa-html5 {
     color: #e44d26;
 }
@@ -192,7 +192,7 @@
     color: #171515;
 }
 
-/* Animação suave de brilho pulsante */
+
 @keyframes pulseGlow {
     0% {
         text-shadow: 0 0 6px currentColor, 0 0 12px currentColor;
@@ -416,9 +416,17 @@
     cursor: pointer;
     font-weight: bold;
     width: 100%;
-    transform: all 0.5s ease;
     margin-top: 10px;
     font-size: 1.1rem;
+    display: flex;
+    /* ✅ Ativa flexbox */
+    align-items: center;
+    /* ✅ Centraliza verticalmente */
+    justify-content: center;
+    /* ✅ Centraliza horizontalmente */
+    gap: 8px;
+    /* ✅ Espaçamento entre texto e ícone */
+    transition: all 0.5s ease;
 }
 
 .campo-form,
@@ -447,9 +455,8 @@
 
 .fa-whatsapp {
     font-size: 1rem;
-    position: relative;
-    left: 5px;
-    top: 5px;
+    position: static;
+    /* ✅ Remove deslocamento manual */
 }
 
 .sr-only {

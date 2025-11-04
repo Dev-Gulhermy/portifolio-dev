@@ -222,3 +222,18 @@ if ('requestIdleCallback' in window) {
 const foto = document.getElementById('fotoPerfil');
 foto.style.willChange = 'transform';
 setTimeout(() => { foto.style.willChange = ''; }, 5000); // remove após início
+
+
+const btnTpo = document.getElementById("btnTopo");
+
+/* Botão voltar ao topo */
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        btnTopo.classList.add("show");
+    } else {
+        btnTopo.classList.remove("show");
+    }
+});
+btnTopo.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});

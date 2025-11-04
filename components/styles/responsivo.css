@@ -1,21 +1,30 @@
-@media screen and (max-width: 768px) {
-    .sobre-caixa {
-        animation: neonPulse 4s ease-in-out infinite;
+/* ============================= */
+/*        ANIMAÇÕES GERAIS       */
+/* ============================= */
+@keyframes neonPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px var(--cor-primaria);
     }
 
-    @keyframes neonPulse {
-
-        0%,
-        100% {
-            box-shadow: 0 0 10px var(--cor-primaria);
-        }
-
-        50% {
-            box-shadow: 0 0 50px var(--cor-primaria), 0 0 40px var(--fundo-fosco);
-        }
+    50% {
+        box-shadow: 0 0 50px var(--cor-primaria), 0 0 40px var(--fundo-fosco);
     }
 }
 
+/* ============================= */
+/*   RESPONSIVO ATÉ 768px        */
+/* ============================= */
+@media screen and (max-width: 425px) {
+    .sobre-caixa {
+        animation: neonPulse 4s ease-in-out infinite;
+    }
+}
+
+/* ============================= */
+/*   RESPONSIVO ATÉ 499px        */
+/* ============================= */
 @media screen and (max-width: 499px) {
 
     html,
@@ -23,7 +32,7 @@
         width: 100%;
     }
 
-
+    /* ===== MENU ===== */
     .menu {
         position: fixed;
         top: 0;
@@ -34,9 +43,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(135deg,
-                rgba(13, 13, 13, .92),
-                rgba(26, 26, 26, .92));
+        background: linear-gradient(135deg, rgba(13, 13, 13, .92), rgba(26, 26, 26, .92));
         backdrop-filter: blur(10px);
         box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
         transform: translateX(100%);
@@ -63,6 +70,7 @@
         will-change: transform, opacity;
     }
 
+    /* Delay de animação dos links */
     .menu li:nth-child(1) a {
         transition-delay: 0.3s;
     }
@@ -133,6 +141,7 @@
         left: 0;
     }
 
+    /* Toggle (hambúrguer) */
     .menu-toggle {
         display: flex !important;
         flex-direction: column;
@@ -164,13 +173,9 @@
         transform: rotate(-45deg) translate(6px, -6px);
     }
 
-    .foto-perfil {
-        width: 25rem;
-        height: 25rem;
-    }
-
+    /* ===== CABEÇALHO ===== */
     h1 {
-        font-size: clamp(2.8rem, 4vw, 3rem);
+        font-size: clamp(2.2rem, 4vw, 3rem);
         text-align: center;
         line-height: 1.2;
         white-space: normal;
@@ -187,26 +192,24 @@
     }
 
     .cabecalho-sub-titulo {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
+    /* ===== ICONS ===== */
     .icons ul {
-        gap: 1rem;
+        gap: 1.2rem;
         flex-wrap: wrap;
+        display: flex;
     }
 
     .icons ul li a {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        font-size: 1px;
+        width: 40px;
+        height: 40px;
+        /* line-height: 55px;
+        font-size: 1rem; */
     }
 
-    .sobre {
-        padding: 1rem 1rem;
-        margin: 0.2rem;
-    }
-
+    /* ===== SEÇÃO SOBRE ===== */
     .sobre {
         padding: 1.5rem 1rem;
         margin: 0 auto;
@@ -231,8 +234,8 @@
         font-size: 50px;
     }
 
+    /* ===== SEÇÃO PROJETOS ===== */
     .projetos {
-        padding: 2rem 1rem;
         margin: 0 auto;
         width: 100%;
     }
@@ -245,22 +248,10 @@
         margin: 0 auto;
     }
 
-    .projetos {
-        padding: 2rem 1rem;
-    }
-
-    .projetos-titulo {
-        font-size: 1.8rem;
-        margin-bottom: 50px;
-    }
-
     .projetos-caixa {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        /* grid-template-columns: repeat(1, 1fr); */
-        /* sempre 2 colunas */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 0.7rem;
-        max-width: auto;
-        margin: 0.2rem;
+        padding: 1rem;
     }
 
     .projetos-imagem {
@@ -269,8 +260,9 @@
     }
 
     .paragrafo-projetos {
-        line-height: 1.20rem;
+        line-height: 1.2rem;
         font-size: 0.8rem;
+        margin-bottom: 2rem;
     }
 
     .projetos-card:hover .paragrafo-projetos {
@@ -279,11 +271,6 @@
 
     .projetos-card:hover {
         transform: translateX(-1px) scale(1.03);
-        min-height: 680px;
-    }
-
-    .btn-projeto {
-        width: 15rem;
     }
 
 
@@ -294,23 +281,17 @@
     .icons-svg-projetos svg {
         width: 25px;
         height: 25px;
-        gap: 0;
     }
-
 
     .caixa-textos-projeto {
         padding: 1.2rem;
     }
 
+    /* ===== CONTATOS ===== */
     .contatos {
         padding: 1rem;
     }
 
-    .contatos-titulo {
-        font-size: 1.8rem;
-        margin-bottom: 50px;
-        /* margin-bottom: 20 - 25; */
-    }
 
     .formulario-contato {
         padding: 0.7rem;
@@ -318,8 +299,6 @@
         position: relative;
         overflow: hidden;
     }
-
-
 
     .brilho-seguidor,
     .brilho-seguidor.neon-vibrante,
@@ -349,7 +328,7 @@
         margin: 0.1rem;
     }
 
-    /* Força todas as variações no tema light dentro do menu hamburguer */
+    /* Tema claro no menu */
     body.light .menu .menu-link,
     body.light .menu .menu-link:link,
     body.light .menu .menu-link:visited,
@@ -365,150 +344,5 @@
 
     body.light .menu-link::after {
         background: linear-gradient(90deg, var(--texto-contraste), var(--texto-contraste));
-    }
-
-}
-
-
-@media screen and (min-width: 500px) {
-    .projetos {
-        padding: 2rem 2rem;
-        margin: 0 auto;
-    }
-
-
-}
-
-@media screen and (min-width: 320px) and (max-width: 375px) {
-    .projetos-card:hover {
-        transform: translateX(-1px) scale(1.03);
-        min-height: 680px;
-    }
-
-    .btn-projeto {
-        width: 15rem;
-    }
-
-    .projetos-caixa .projetos-card:nth-child(2):hover {
-        min-height: 660px;
-    }
-
-}
-
-@media screen and (min-width: 375px) and (max-width: 425px) {
-    .projetos-card:hover {
-        transform: translateX(-1px) scale(1.03);
-        min-height: 570px;
-    }
-
-    .btn-projeto {
-        width: 21rem;
-    }
-
-    /* .projetos-caixa .projetos-card:nth-child(2):hover {
-        min-height: 625px;
-    } */
-
-    .projetos-caixa .projetos-card:nth-child(3):hover {
-        min-height: 580px;
-    }
-
-    .projetos-caixa .projetos-card:nth-child(4):hover {
-        min-height: 580px;
-    }
-}
-
-
-@media screen and (min-width: 425px) and (max-width: 768px) {
-    .projetos-card:hover {
-        transform: translateX(-1px) scale(1.03);
-        min-height: 570px;
-    }
-
-    .btn-projeto {
-        width: 21rem;
-    }
-
-    .projetos-caixa .projetos-card:nth-child(2):hover {
-        min-height: 570px;
-    }
-
-    .projetos-caixa .projetos-card:nth-child(3):hover {
-        min-height: 590px;
-    }
-
-    .projetos-caixa .projetos-card:nth-child(4):hover {
-        min-height: 575px;
-    }
-
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    .projetos-card:hover {
-        transform: translateX(-1px) scale(1.03);
-        min-height: 625px;
-    }
-
-    .btn-projeto {
-        width: 40rem;
-    }
-
-    .projetos-caixa .projetos-card:nth-child(2):hover {
-        min-height: 625px;
-    }
-
-    .projetos-caixa .projetos-card:nth-child(3):hover {
-        min-height: 625px;
-    }
-
-    .projetos-caixa .projetos-card:nth-child(4):hover {
-        min-height: 625px;
-    }
-}
-
-@media screen and (min-width: 1024px) and (max-width: 1440px) {
-    .projetos-card:hover {
-        transform: translateX(-1px) scale(1.03);
-        min-height: 700px;
-    }
-
-    .btn-projeto {
-        width: 26rem;
-    }
-
-    .projetos-caixa .projetos-card:nth-child(2):hover {
-        min-height: 720px;
-    }
-
-    .projetos-caixa .projetos-card:nth-child(3):hover {
-        min-height: 700px;
-    }
-
-    .projetos-caixa .projetos-card:nth-child(4):hover {
-        min-height: 700px;
-    }
-
-}
-
-@media screen and (min-width: 1440px) {
-    .projetos-card:hover {
-        transform: translateX(-1px) scale(1.03);
-        min-height: 650px;
-    }
-
-    .btn-projeto {
-        width: 33rem;
-    }
-
-    .projetos-caixa .projetos-card:nth-child(2):hover {
-        min-height: 650px;
-    }
-
-    .projetos-caixa .projetos-card:nth-child(3):hover {
-        min-height: 650px;
-    }
-
-    .projetos-caixa .projetos-card:nth-child(4):hover {
-        min-height: 650px;
     }
 }
